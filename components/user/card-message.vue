@@ -8,7 +8,7 @@
 			@input="handleInput"
 			@keyup.ctrl.enter="submit"
 		></textarea>
-		<button class="flex-none self-start" @click="submit">
+		<button class="flex-none self-start" aria-label="Send" @click="submit">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 512 512"
@@ -25,7 +25,7 @@
 		<label for="email-form"><span class="font-bold text-indigo-500">Tip:</span> You can press Ctrl + Enter to send</label>
 	</div>
 
-	<a ref="anchor" class="hidden"></a>
+	<a href="#" ref="anchor" class="hidden" aria-hidden="false"></a>
 </template>
 
 <script setup lang="ts">

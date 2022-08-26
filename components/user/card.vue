@@ -30,13 +30,29 @@
 								<foreignObject x="0" y="0" width="80" height="80" mask="url(#avatar-mask)">
 									<!-- avatarStack -->
 									<div class="grid w-full h-full">
-										<img
-											src="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=80"
-											alt="avatar"
-											aria-hidden="true"
-											draggable="false"
-											class="block"
-										/>
+										<picture>
+											<source
+												srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=128,
+													https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=256 x2,
+													https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=512 x4"
+												type="image/webp"
+											/>
+											<source
+												srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=128,
+													https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=256 x2,
+													https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=512 x4"
+												type="image/png"
+											/>
+											<img
+												src="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=80"
+												alt="avatar"
+												width="80"
+												height="80"
+												aria-hidden="true"
+												draggable="false"
+												class="block"
+											/>
+										</picture>
 									</div>
 								</foreignObject>
 								<circle cx="68" cy="68" r="8" class="fill-green-600"></circle>
@@ -55,7 +71,7 @@
 				</div>
 
 				<!-- profileBadges -->
-				<div aria-label="User Badges"></div>
+				<div aria-label="User Badges" role="list"></div>
 			</div>
 
 			<!-- body -->
