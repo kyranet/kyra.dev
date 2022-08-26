@@ -1,6 +1,6 @@
 <template>
 	<div class="mb-3">
-		<h3 class="font-bold text-xs text-zinc-800 dark:text-slate-300 leading-4 mb-2 uppercase">About Me</h3>
+		<h2 class="font-bold text-xs text-zinc-800 dark:text-slate-300 leading-4 mb-2 uppercase">About Me</h2>
 
 		<!-- userInfoBody -->
 		<div class="whitespace-pre-line">

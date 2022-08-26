@@ -78,7 +78,7 @@
 				<user-roles />
 				<user-note />
 
-				<input type="text" class="w-full p-3 bg-slate-200 dark:bg-zinc-800 outline-0 p-1 rounded resize-none" placeholder="Message @kyra" />
+				<user-card-message />
 			</div>
 		</div>
 	</div>
