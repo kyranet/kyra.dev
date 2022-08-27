@@ -20,16 +20,16 @@
 				<div class="grid w-full h-full">
 					<picture>
 						<source
-							srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=128,
-								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=256 x2,
-								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=512 x4"
 							type="image/webp"
+							srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=128 1x,
+								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=256 2x,
+								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=512 4x"
 						/>
 						<source
-							srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=128,
-								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=256 x2,
-								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=512 x4"
 							type="image/png"
+							srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=128 1x,
+								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=256 2x,
+								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=512 4x"
 						/>
 						<img
 							src="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=80"
