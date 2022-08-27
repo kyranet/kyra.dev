@@ -43,3 +43,31 @@ export interface DiscordUser {
 }
 
 export type Status = 'online' | 'idle' | 'dnd' | 'offline';
+
+export enum LanyardOpcode {
+	Event,
+	Hello,
+	Initialize,
+	Heartbeat
+}
+
+export type LanyardIncomingPayload = LanyardEventInitStatePayload | LanyardEventPresenceUpdatePayload | LanyardHelloPayload;
+
+interface LanyardEventInitStatePayload {
+	op: LanyardOpcode.Event;
+	seq: number;
+	t: 'INIT_STATE';
+	d: LanyardUser;
+}
+
+interface LanyardEventPresenceUpdatePayload {
+	op: LanyardOpcode.Event;
+	seq: number;
+	t: 'INIT_STATE';
+	d: LanyardUser;
+}
+
+interface LanyardHelloPayload {
+	op: LanyardOpcode.Hello;
+	d: { heartbeat_interval: number };
+}

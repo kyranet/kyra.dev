@@ -56,59 +56,50 @@
 </template>
 
 <script setup lang="ts">
-import { LanyardUser } from '~~/composables/use-user';
+import { LanyardIncomingPayload, LanyardOpcode } from '~~/composables/use-user';
 
 const user = useUser();
 const config = useRuntimeConfig();
 const activity = computed(() => user.value.activities.find((activity) => activity.assets));
 
-let heartbeatInterval = -1;
-const websocket = new WebSocket('wss://api.lanyard.rest/socket');
-websocket.onopen = () => console.info('[WS] Successfully connected');
-websocket.onerror = (event) => console.error('[WS] Received error: ', event);
-websocket.onmessage = (event) => {
-	const data = JSON.parse(event.data) as LanyardIncomingPayload;
-	switch (data.op) {
-		case LanyardOpcode.Event:
-			user.value = data.d;
-			break;
-		case LanyardOpcode.Hello: {
-			if (heartbeatInterval !== -1) window.clearInterval(heartbeatInterval);
-			heartbeatInterval = window.setInterval(() => websocket.send(JSON.stringify({ op: LanyardOpcode.Heartbeat })), data.d.heartbeat_interval);
+function connect() {
+	let heartbeatInterval = -1;
+	const websocket = new WebSocket('wss://api.lanyard.rest/socket');
 
-			websocket.send(JSON.stringify({ op: 2, d: { subscribe_to_id: config.public.DISCORD_USER_ID } }));
-			break;
+	websocket.onopen = () => console.info('[WS] Successfully connected');
+	websocket.onerror = (event) => {
+		console.error('[WS] Received error: ', event);
+		websocket.close();
+	};
+	websocket.onclose = (event) => {
+		console.error('[WS] Closed with code %d. Retrying in 1 second.', event.code);
+		if (heartbeatInterval !== -1) {
+			window.clearInterval(heartbeatInterval);
+			heartbeatInterval = -1;
 		}
-		default:
-			console.info('[WS] Unknown message: %d', data);
-	}
-};
+		window.setTimeout(() => connect(), 1000);
+	};
+	websocket.onmessage = (event) => {
+		const data = JSON.parse(event.data) as LanyardIncomingPayload;
+		switch (data.op) {
+			case LanyardOpcode.Event:
+				user.value = data.d;
+				break;
+			case LanyardOpcode.Hello: {
+				if (heartbeatInterval !== -1) window.clearInterval(heartbeatInterval);
+				heartbeatInterval = window.setInterval(
+					() => websocket.send(JSON.stringify({ op: LanyardOpcode.Heartbeat })),
+					data.d.heartbeat_interval
+				);
 
-enum LanyardOpcode {
-	Event,
-	Hello,
-	Initialize,
-	Heartbeat
+				websocket.send(JSON.stringify({ op: 2, d: { subscribe_to_id: config.public.DISCORD_USER_ID } }));
+				break;
+			}
+			default:
+				console.info('[WS] Unknown message: %d', data);
+		}
+	};
 }
 
-type LanyardIncomingPayload = LanyardEventInitStatePayload | LanyardEventPresenceUpdatePayload | LanyardHelloPayload;
-
-interface LanyardEventInitStatePayload {
-	op: LanyardOpcode.Event;
-	seq: number;
-	t: 'INIT_STATE';
-	d: LanyardUser;
-}
-
-interface LanyardEventPresenceUpdatePayload {
-	op: LanyardOpcode.Event;
-	seq: number;
-	t: 'INIT_STATE';
-	d: LanyardUser;
-}
-
-interface LanyardHelloPayload {
-	op: LanyardOpcode.Hello;
-	d: { heartbeat_interval: number };
-}
+connect();
 </script>
