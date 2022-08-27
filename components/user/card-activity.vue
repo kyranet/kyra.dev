@@ -49,6 +49,10 @@
 <script setup lang="ts">
 import type { GatewayActivity } from 'discord-api-types/payloads/v10';
 
+const secondAsMilliseconds = 1000;
+const minuteAsMilliseconds = secondAsMilliseconds * 60;
+const hourAsMilliseconds = minuteAsMilliseconds * 60;
+
 const props = defineProps<{ data: GatewayActivity }>();
 const elapsed = useState<string | null>('user-card-activity-elapsed', computeElapsed);
 window.setInterval(() => (elapsed.value = computeElapsed()), 1000);
@@ -57,11 +61,13 @@ function computeElapsed() {
 	if (!props.data.timestamps) return null;
 
 	const distance = Date.now() - props.data.timestamps.start;
-	const hours = Math.floor(distance / 3600000)
+	const seconds = (Math.floor(distance / secondAsMilliseconds) % 60).toString().padStart(2, '0');
+	const minutes = (Math.floor(distance / minuteAsMilliseconds) % 60).toString().padStart(2, '0');
+	if (distance < hourAsMilliseconds) return `${minutes}:${seconds}`;
+
+	const hours = Math.floor(distance / hourAsMilliseconds)
 		.toString()
 		.padStart(2, '0');
-	const minutes = (Math.floor(distance / 60000) % 60).toString().padStart(2, '0');
-	const seconds = (Math.floor(distance / 1000) % 60).toString().padStart(2, '0');
 	return `${hours}:${minutes}:${seconds}`;
 }
 </script>
