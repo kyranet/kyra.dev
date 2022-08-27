@@ -11,53 +11,7 @@
 				<div class="absolute top-[76px] left-[16px]">
 					<!-- avatarWrapperTarget -->
 					<div class="rounded-full">
-						<!-- avatar -->
-						<div
-							role="img"
-							aria-label="kyra, avatar"
-							aria-hidden="false"
-							class="w-[92px] h-[92px] border-[6px] relative rounded-full border-slate-50 dark:border-zinc-900"
-						>
-							<!-- mask -->
-							<svg width="92" height="80" viewBox="0 0 92 80" class="absolute">
-								<defs>
-									<mask id="avatar-mask">
-										<circle cx="40" cy="40" r="40" fill="white" />
-										<circle cx="68" cy="68" r="14" fill="black" />
-									</mask>
-								</defs>
-
-								<foreignObject x="0" y="0" width="80" height="80" mask="url(#avatar-mask)">
-									<!-- avatarStack -->
-									<div class="grid w-full h-full">
-										<picture>
-											<source
-												srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=128,
-													https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=256 x2,
-													https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=512 x4"
-												type="image/webp"
-											/>
-											<source
-												srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=128,
-													https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=256 x2,
-													https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=512 x4"
-												type="image/png"
-											/>
-											<img
-												src="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=80"
-												alt="avatar"
-												width="80"
-												height="80"
-												aria-hidden="true"
-												draggable="false"
-												class="block"
-											/>
-										</picture>
-									</div>
-								</foreignObject>
-								<circle cx="68" cy="68" r="8" class="fill-green-600"></circle>
-							</svg>
-						</div>
+						<user-card-avatar :status="user.discord_status" />
 					</div>
 				</div>
 			</div>
@@ -91,6 +45,7 @@
 				<!-- divider -->
 				<div class="w-full h-[1px] bg-slate-200 dark:bg-zinc-800 mb-3"></div>
 				<user-info />
+				<user-card-activity v-if="activity" :data="activity" />
 				<user-roles />
 				<user-note />
 
@@ -99,3 +54,61 @@
 		</div>
 	</div>
 </template>
+
+<script setup lang="ts">
+import { LanyardUser } from '~~/composables/use-user';
+
+const user = useUser();
+const config = useRuntimeConfig();
+const activity = computed(() => user.value.activities.find((activity) => activity.assets));
+
+let heartbeatInterval = -1;
+const websocket = new WebSocket('wss://api.lanyard.rest/socket');
+websocket.onopen = () => console.info('[WS] Successfully connected');
+websocket.onerror = (event) => console.error('[WS] Received error: ', event);
+websocket.onmessage = (event) => {
+	const data = JSON.parse(event.data) as LanyardIncomingPayload;
+	switch (data.op) {
+		case LanyardOpcode.Event:
+			user.value = data.d;
+			break;
+		case LanyardOpcode.Hello: {
+			if (heartbeatInterval !== -1) window.clearInterval(heartbeatInterval);
+			heartbeatInterval = window.setInterval(() => websocket.send(JSON.stringify({ op: LanyardOpcode.Heartbeat })), data.d.heartbeat_interval);
+
+			websocket.send(JSON.stringify({ op: 2, d: { subscribe_to_id: config.public.DISCORD_USER_ID } }));
+			break;
+		}
+		default:
+			console.info('[WS] Unknown message: %d', data);
+	}
+};
+
+enum LanyardOpcode {
+	Event,
+	Hello,
+	Initialize,
+	Heartbeat
+}
+
+type LanyardIncomingPayload = LanyardEventInitStatePayload | LanyardEventPresenceUpdatePayload | LanyardHelloPayload;
+
+interface LanyardEventInitStatePayload {
+	op: LanyardOpcode.Event;
+	seq: number;
+	t: 'INIT_STATE';
+	d: LanyardUser;
+}
+
+interface LanyardEventPresenceUpdatePayload {
+	op: LanyardOpcode.Event;
+	seq: number;
+	t: 'INIT_STATE';
+	d: LanyardUser;
+}
+
+interface LanyardHelloPayload {
+	op: LanyardOpcode.Hello;
+	d: { heartbeat_interval: number };
+}
+</script>

@@ -7,6 +7,11 @@ export default defineNuxtConfig({
 	typescript: {
 		shim: false
 	},
+	runtimeConfig: {
+		public: {
+			DISCORD_USER_ID: '242043489611808769'
+		}
+	},
 	meta: {
 		title: 'Aura Román',
 		htmlAttrs: { lang: 'en' },
