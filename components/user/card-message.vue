@@ -25,7 +25,7 @@
 		<label for="email-form"><span class="font-bold text-indigo-500">Tip:</span> You can press Ctrl + Enter to send</label>
 	</div>
 
-	<a href="#" ref="anchor" class="hidden" aria-hidden="false"></a>
+	<a href="#" ref="anchor" class="hidden" aria-hidden="false" rel="noopener noreferrer" target="_top"></a>
 </template>
 
 <script setup lang="ts">
