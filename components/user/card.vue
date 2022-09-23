@@ -4,9 +4,11 @@
 			<!-- headerWrapper -->
 			<div class="relative">
 				<!-- banner -->
-				<div
-					class="w-full h-[120px] bg-center bg-[url('https://cdn.discordapp.com/banners/242043489611808769/a_b00d7152c6a78089b3f2e71276585641.gif?size=300')]"
-				></div>
+				<picture>
+					<source type="image/webp" srcset="/images/banner.webp" />
+					<source type="image/gif" srcset="/images/banner.gif" />
+					<img src="/images/banner.gif" alt="banner" width="300" height="120" aria-hidden="true" draggable="false" class="block" />
+				</picture>
 				<!-- avatarWrapperNormal -->
 				<div class="absolute top-[76px] left-[16px]">
 					<!-- avatarWrapperTarget -->

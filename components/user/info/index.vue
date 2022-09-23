@@ -8,7 +8,7 @@
 				<img src="~/assets/icons/transgender-flag.svg" alt="transgender-flag" class="w-5 h-5 inline-block align-bottom" draggable="false" />
 			</span>
 			{{ ' She/Her · ' }}
-			<external-link href="https://www.16personalities.com/infp-personality" text="INFP" />{{ '-T · 23\n' }}
+			<external-link href="https://www.16personalities.com/infp-personality" text="INFP-T" />{{ ' · 24\n' }}
 
 			<span class="inline-block">
 				<img src="~/assets/icons/frame-photo.svg" alt="frame-photo" class="w-5 h-5 inline-block align-bottom" draggable="false" />

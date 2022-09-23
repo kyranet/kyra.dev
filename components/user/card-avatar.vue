@@ -21,25 +21,13 @@
 					<picture>
 						<source
 							type="image/webp"
-							srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=128 1x,
-								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=256 2x,
-								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.webp?size=512 4x"
+							srcset="/images/avatar-128.webp 1x, /images/avatar-256.webp 2x, /images/avatar-384.webp 3x, /images/avatar-512.webp 4x"
 						/>
 						<source
 							type="image/png"
-							srcset="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=128 1x,
-								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=256 2x,
-								https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=512 4x"
+							srcset="/images/avatar-128.png 1x, /images/avatar-256.png 2x, /images/avatar-384.png 3x, /images/avatar-512.png 4x"
 						/>
-						<img
-							src="https://cdn.discordapp.com/avatars/242043489611808769/c3b5e662c664a61158b50b9f23520411.png?size=80"
-							alt="avatar"
-							width="80"
-							height="80"
-							aria-hidden="true"
-							draggable="false"
-							class="block"
-						/>
+						<img src="/images/avatar-128.png" alt="avatar" width="80" height="80" aria-hidden="true" draggable="false" class="block" />
 					</picture>
 				</div>
 			</foreignObject>

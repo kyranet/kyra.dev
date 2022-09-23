@@ -1,7 +1,7 @@
 <template>
-	<a :href="href" target="_blank" rel="noopener noreferrer" class="text-white py-2 px-6 focus:outline-none rounded" :class="types[type ?? 'none']">
+	<nuxt-link :to="href" target="_blank" class="text-white py-2 px-6 focus:outline-none rounded" :class="types[type ?? 'none']">
 		{{ text ?? href }}
-	</a>
+	</nuxt-link>
 </template>
 
 <script setup lang="ts">

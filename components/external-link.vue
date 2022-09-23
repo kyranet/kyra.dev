@@ -1,7 +1,7 @@
 <template>
-	<a :href="href" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-2">
+	<nuxt-link :to="href" target="_blank" class="hover:underline underline-offset-2">
 		{{ text ?? href }}
-	</a>
+	</nuxt-link>
 </template>
 
 <script setup lang="ts">
