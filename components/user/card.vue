@@ -46,10 +46,11 @@
 
 				<!-- divider -->
 				<div class="w-full h-[1px] bg-slate-200 dark:bg-zinc-800 mb-3"></div>
-				<user-info />
+				<user-card-info />
+				<user-card-dates />
 				<user-card-activity v-if="activity" :data="activity" />
-				<user-roles />
-				<user-note />
+				<user-card-roles />
+				<user-card-note />
 
 				<user-card-message />
 			</div>
