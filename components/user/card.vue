@@ -104,5 +104,5 @@ function connect() {
 	};
 }
 
-connect();
+if (!process.server) connect();
 </script>

@@ -1,9 +1,13 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
 	modules: ['@nuxtjs/tailwindcss'],
-	ssr: false,
 	typescript: {
-		shim: false
+		shim: false,
+		tsConfig: {
+			compilerOptions: {
+				moduleResolution: 'bundler'
+			}
+		}
 	},
 	runtimeConfig: {
 		public: {
@@ -79,6 +83,12 @@ export default defineNuxtConfig({
 				{ property: 'og:type', content: 'website' },
 				{ property: 'og:url', content: 'https://kyra.dev' }
 			]
+		}
+	},
+	nitro: {
+		preset: 'cloudflare-pages',
+		prerender: {
+			routes: ['/', '/sitemap.xml']
 		}
 	}
 });

@@ -6,9 +6,9 @@
 				<p class="mb-8 leading-relaxed">
 					Videogame Development student at UCM. Fast learner and enthusiast programmer in JS, TS, C#, C++, and Rust.
 				</p>
-				<div class="flex justify-center">
+				<div class="flex gap-2">
 					<button-link href="https://github.com/kyranet" text="GitHub" />
-					<button-link href="https://twitter.com/kyranet_" text="Twitter" class="ml-2" />
+					<button-link href="https://twitter.com/kyranet_" text="Twitter" />
 				</div>
 			</div>
 
