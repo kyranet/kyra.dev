@@ -38,9 +38,13 @@
 			<button
 				v-for="button in data.buttons"
 				:key="typeof button === 'string' ? button : button.label"
-				class="h-8 text-sm w-auto relative flex items-center justify-center text-white bg-zinc-500 hover:bg-zinc-600 dark:bg-zinc-600 hover:dark:bg-zinc-500 rounded transition-colors"
+				class="h-8 text-sm w-auto relative flex items-center justify-center text-white bg-zinc-500 dark:bg-zinc-600 rounded transition-colors"
+				:class="typeof button === 'string' ? 'opacity-70' : 'hover:bg-zinc-600 hover:dark:bg-zinc-500'"
+				:disabled="typeof button === 'string'"
 			>
-				<div class="block whitespace-nowrap text-ellipsis overflow-hidden">{{ button }}</div>
+				<div class="block whitespace-nowrap text-ellipsis overflow-hidden">
+					{{ button }}
+				</div>
 			</button>
 		</div>
 	</div>
@@ -58,7 +62,7 @@ const elapsed = useState<string | null>('user-card-activity-elapsed', computeEla
 window.setInterval(() => (elapsed.value = computeElapsed()), 1000);
 
 function computeElapsed() {
-	if (!props.data.timestamps) return null;
+	if (!props.data.timestamps?.start) return null;
 
 	const distance = Date.now() - props.data.timestamps.start;
 	const seconds = (Math.floor(distance / secondAsMilliseconds) % 60).toString().padStart(2, '0');

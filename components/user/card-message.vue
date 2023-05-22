@@ -8,11 +8,11 @@
 			@input="handleInput"
 			@keyup.ctrl.enter="submit"
 		></textarea>
-		<button class="flex-none self-start" aria-label="Send" @click="submit">
+		<button class="flex-none self-start ml-2" aria-label="Send" @click="submit">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 512 512"
-				class="w-6 ml-2 top-3 right-3 rounded-l-none fill-zinc-700 dark:fill-zinc-300"
+				class="w-6 top-3 right-3 rounded-l-none fill-zinc-700 dark:fill-zinc-300"
 				:class="{ 'opacity-20': !input.length }"
 			>
 				<path
@@ -33,12 +33,15 @@ const input = ref('');
 const anchor = ref<HTMLAnchorElement>();
 
 function submit() {
-	anchor.value.href = `mailto:kyradiscord@gmail.com?body=${encodeURIComponent(input.value)}`;
-	anchor.value.click();
+	const element = anchor.value;
+	if (!element) return;
+
+	element.href = `mailto:kyradiscord@gmail.com?body=${encodeURIComponent(input.value)}`;
+	element.click();
 	input.value = '';
 }
 
-function handleInput(event: KeyboardEvent) {
+function handleInput(event: Event) {
 	const target = event.target as HTMLTextAreaElement;
 	target.style.removeProperty('height');
 	target.style.height = `${target.scrollHeight + 2}px`;
