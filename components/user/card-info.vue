@@ -1,56 +1,38 @@
 <template>
 	<div class="mb-3">
-		<h2 class="font-bold text-xs text-zinc-700 dark:text-slate-300 leading-4 mb-2 uppercase">About Me</h2>
+		<h2 class="mb-2 text-xs font-bold uppercase leading-4 text-zinc-700 dark:text-slate-300">About Me</h2>
 
 		<!-- userInfoBody -->
-		<div class="whitespace-pre-line">
-			<span class="inline-block">
-				<img src="~/assets/icons/transgender-flag.svg" alt="transgender-flag" class="w-5 h-5 inline-block align-bottom" draggable="false" />
-			</span>
-			{{ ' She/Her · ' }}
-			<external-link href="https://www.16personalities.com/infp-personality" text="INFP-T" />{{ ' · 24\n' }}
+		<section role="list">
+			<div role="listitem">
+				<IconsTransgenderFlag aria-label="Transgender ·" draggable="false" />
+				{{ 'She/Her ·' }}
+				<external-link href="https://www.16personalities.com/infp-personality" text="INFP-T" />
+				{{ ' · 24' }}
+			</div>
 
-			<span class="inline-block">
-				<img src="~/assets/icons/frame-photo.svg" alt="frame-photo" class="w-5 h-5 inline-block align-bottom" draggable="false" />
-			</span>
-			{{ ' Avatar: ' }}
-			<external-link href="https://twitter.com/paxiti" text="@paxiti" />
-			{{ ' · Banner: ' }}
-			<external-link href="https://www.tumblr.com/1041uuu" text="1041uuu" />
-			{{ '\n\n' }}
+			<div role="listitem">
+				<IconsFramePhoto aria-hidden="true" draggable="false" />
+				{{ ' Avatar: ' }}
+				<external-link href="https://twitter.com/paxiti" text="@paxiti" />
+				{{ ' · Banner: ' }}
+				<external-link href="https://www.tumblr.com/1041uuu" text="1041uuu" />
+			</div>
 
-			<span class="inline-block">
-				<img
-					src="~/assets/icons/small-blue-diamond.svg"
-					alt="small-blue-diamond"
-					class="w-5 h-5 inline-block align-bottom"
-					draggable="false"
-				/>
-			</span>
-			{{ ' ' }}
-			<external-link href="https://github.com/skyra-project" text="Skyra" />{{ "'s Project Owner\n" }}
+			<div class="mt-5" role="listitem">
+				<IconsSmallBlueDiamond draggable="false" aria-hidden="true" />
+				<external-link class="pl-1" href="https://github.com/skyra-project" text="Skyra" />{{ "'s Project Owner" }}
+			</div>
 
-			<span class="inline-block">
-				<img
-					src="~/assets/icons/small-blue-diamond.svg"
-					alt="small-blue-diamond"
-					class="w-5 h-5 inline-block align-bottom"
-					draggable="false"
-				/>
-			</span>
-			{{ ' ' }}
-			<external-link href="https://github.com/discordjs" text="Discord.js" />{{ ' Core Maintainer\n' }}
+			<div role="listitem">
+				<IconsSmallBlueDiamond draggable="false" aria-hidden="true" />
+				<external-link class="pl-1" href="https://github.com/discordjs" text="Discord.js" />{{ ' Core Maintainer' }}
+			</div>
 
-			<span class="inline-block">
-				<img
-					src="~/assets/icons/small-blue-diamond.svg"
-					alt="small-blue-diamond"
-					class="w-5 h-5 inline-block align-bottom"
-					draggable="false"
-				/>
-			</span>
-			{{ ' ' }}
-			<external-link href="https://github.com/sapphiredev" text="Sapphire" />{{ "'s Lead Programmer & Architect\n" }}
-		</div>
+			<div role="listitem">
+				<IconsSmallBlueDiamond draggable="false" aria-hidden="true" />
+				<external-link class="pl-1" href="https://github.com/sapphiredev" text="Sapphire" />{{ "'s Lead Programmer & Architect\n" }}
+			</div>
+		</section>
 	</div>
 </template>

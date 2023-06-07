@@ -31,7 +31,8 @@
 }
 
 @layer base {
-	html, body {
-		@apply bg-white dark:bg-zinc-800 text-gray-600 dark:text-gray-200;
+	html,
+	body {
+		@apply bg-white text-gray-600 dark:bg-zinc-800 dark:text-gray-200;
 	}
 }
