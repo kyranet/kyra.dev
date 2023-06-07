@@ -5,16 +5,20 @@
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare",
 		"update": "yarn upgrade-interactive",
-		"format": "prettier --write --loglevel=warn \"{assets,components,composables,layouts,pages}/**/*.{js,ts,json,vue}\" \"app.vue\" \"nuxt.config.ts\""
+		"format": "prettier --write ."
 	},
-	"prettier": "@sapphire/prettier-config",
 	"devDependencies": {
+		"@heroicons/vue": "^2.0.18",
 		"@nuxtjs/tailwindcss": "^6.7.0",
 		"@sapphire/prettier-config": "^1.4.5",
-		"discord-api-types": "^0.37.42",
-		"nuxt": "^3.5.1",
+		"@vite-pwa/nuxt": "^0.0.10",
+		"@vueuse/nuxt": "^10.1.2",
+		"discord-api-types": "^0.37.43",
+		"nuxt": "^3.5.3",
 		"prettier": "^2.8.8",
+		"prettier-plugin-tailwindcss": "^0.3.0",
 		"sitemap": "^7.1.1",
 		"vue-meta": "^2.4.0"
 	},

@@ -1,11 +1,6 @@
 <template>
 	<!-- avatar -->
-	<div
-		role="img"
-		aria-label="kyra, avatar"
-		aria-hidden="false"
-		class="w-[92px] h-[92px] border-[6px] relative rounded-full border-slate-50 dark:border-zinc-900"
-	>
+	<div aria-hidden="true" class="relative h-[92px] w-[92px] rounded-full border-[6px] border-slate-50 dark:border-zinc-900">
 		<!-- mask -->
 		<svg width="92" height="80" viewBox="0 0 92 80" class="absolute">
 			<defs>
@@ -17,7 +12,7 @@
 
 			<foreignObject x="0" y="0" width="80" height="80" mask="url(#avatar-mask)">
 				<!-- avatarStack -->
-				<div class="grid w-full h-full">
+				<div class="grid h-full w-full">
 					<picture>
 						<source
 							type="image/webp"

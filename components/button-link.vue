@@ -1,9 +1,7 @@
 <template>
-	<button class="px-6 py-2 rounded" :class="types[type ?? 'none']">
-		<nuxt-link :to="href" target="_blank">
-			{{ text ?? href }}
-		</nuxt-link>
-	</button>
+	<nuxt-link is="button" :to="href" target="_blank" class="rounded px-6 py-2" :class="types[type ?? 'none']">
+		{{ text ?? href }}
+	</nuxt-link>
 </template>
 
 <script setup lang="ts">

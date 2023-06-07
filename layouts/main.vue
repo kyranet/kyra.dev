@@ -1,6 +1,6 @@
 <template>
-	<div class="flex flex-col h-screen justify-between">
-		<main class="flex-auto grid">
+	<div class="flex h-screen flex-col justify-between">
+		<main class="grid flex-auto">
 			<slot></slot>
 		</main>
 		<sections-app-footer />

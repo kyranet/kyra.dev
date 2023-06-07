@@ -1,9 +1,9 @@
 <template>
 	<div class="mb-3">
-		<h2 class="font-bold text-xs text-zinc-700 dark:text-slate-300 leading-4 mb-2 uppercase">Playing a game</h2>
+		<h2 class="mb-2 text-xs font-bold uppercase leading-4 text-zinc-700 dark:text-slate-300">Playing a game</h2>
 
 		<!-- bodyNormal -->
-		<div class="items-center flex">
+		<div class="flex items-center">
 			<!-- assets -->
 			<div class="relative self-start">
 				<img
@@ -11,7 +11,7 @@
 					:alt="data.assets!.large_text"
 					width="60"
 					height="60"
-					class="block object-cover rounded-lg"
+					class="block rounded-lg object-cover"
 					:class="{ 'large-mask': data.assets!.small_text }"
 				/>
 				<img
@@ -20,29 +20,29 @@
 					:alt="data.assets!.small_text"
 					width="20"
 					height="20"
-					class="rounded-full absolute -bottom-1 -right-1"
+					class="absolute -bottom-1 -right-1 rounded-full"
 				/>
 			</div>
 
 			<!-- content -->
-			<div class="flex-auto overflow-hidden ml-2.5">
-				<div class="font-semibold block whitespace-nowrap text-ellipsis overflow-hidden text-sm">{{ data.name }}</div>
-				<div v-if="data.details" class="block whitespace-nowrap text-ellipsis overflow-hidden">{{ data.details }}</div>
-				<div v-if="data.state" class="block whitespace-nowrap text-ellipsis overflow-hidden">{{ data.state }}</div>
-				<div v-if="elapsed" class="block whitespace-nowrap text-ellipsis overflow-hidden">{{ elapsed }} elapsed</div>
+			<div class="ml-2.5 flex-auto overflow-hidden">
+				<div class="block overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold">{{ data.name }}</div>
+				<div v-if="data.details" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ data.details }}</div>
+				<div v-if="data.state" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ data.state }}</div>
+				<div v-if="elapsed" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ elapsed }} elapsed</div>
 			</div>
 		</div>
 
 		<!-- buttons -->
-		<div v-if="data.buttons?.length" class="flex flex-initial mt-3 flex-col flex-wrap justify-start items-stretch">
+		<div v-if="data.buttons?.length" class="mt-3 flex flex-initial flex-col flex-wrap items-stretch justify-start">
 			<button
 				v-for="button in data.buttons"
 				:key="typeof button === 'string' ? button : button.label"
-				class="h-8 text-sm w-auto relative flex items-center justify-center text-white bg-zinc-500 dark:bg-zinc-600 rounded transition-colors"
+				class="relative flex h-8 w-auto items-center justify-center rounded bg-zinc-500 text-sm text-white transition-colors dark:bg-zinc-600"
 				:class="typeof button === 'string' ? 'opacity-70' : 'hover:bg-zinc-600 hover:dark:bg-zinc-500'"
 				:disabled="typeof button === 'string'"
 			>
-				<div class="block whitespace-nowrap text-ellipsis overflow-hidden">
+				<div class="block overflow-hidden text-ellipsis whitespace-nowrap">
 					{{ button }}
 				</div>
 			</button>
