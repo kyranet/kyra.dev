@@ -1,3 +1,22 @@
+const manifestIcons = [
+	{
+		src: 'https://kyra.dev/icons/android-chrome-192x192.png',
+		sizes: '192x192',
+		type: 'image/png'
+	},
+	{
+		src: 'https://kyra.dev/icons/android-chrome-512x512.png',
+		sizes: '512x512',
+		type: 'image/png'
+	},
+	{
+		src: 'https://kyra.dev/icons/maskable_icon.png',
+		sizes: '640x640',
+		type: 'image/png',
+		purpose: 'maskable'
+	}
+];
+
 const name = 'Aura Román';
 const description = "Aura Román's personal website and portfolio.";
 
@@ -45,12 +64,14 @@ export default defineNuxtConfig({
 			short_name: 'Portfolio',
 			start_url: '/',
 			theme_color: '#18181b',
+			icons: manifestIcons,
 			shortcuts: [
 				{
 					name: 'About Aura Román',
 					short_name: name,
 					description: 'Go to the landing page',
-					url: '/'
+					url: '/',
+					icons: manifestIcons
 				}
 			]
 		}
@@ -63,15 +84,14 @@ export default defineNuxtConfig({
 			htmlAttrs: { lang: 'en' },
 			link: [
 				{ rel: 'alternate', href: 'https://kyra.dev' },
-				{ rel: 'canonical', href: 'https://kyra.dev' }
-				// { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon.png' },
-				// { rel: 'apple-touch-startup-image', href: '/icons/apple-startup.png' },
-				// { rel: 'icon', href: '/favicon.ico' },
-				// { rel: 'icon', href: '/icons/favicon-16x16.png' },
-				// { rel: 'icon', href: '/icons/android-chrome-192x192.png' },
-				// { rel: 'icon', href: '/icons/favicon-32x32.png' },
-				// { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg' },
-				// { rel: 'shortcut icon', href: '/favicon.ico' }
+				{ rel: 'canonical', href: 'https://kyra.dev' },
+				{ rel: 'apple-touch-icon', href: '/icons/apple-touch-icon.png' },
+				{ rel: 'icon', href: '/favicon.ico' },
+				{ rel: 'icon', href: '/icons/favicon-16x16.png' },
+				{ rel: 'icon', href: '/icons/android-chrome-192x192.png' },
+				{ rel: 'icon', href: '/icons/favicon-32x32.png' },
+				{ rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg' },
+				{ rel: 'shortcut icon', href: '/favicon.ico' }
 			],
 			meta: [
 				{ 'http-equiv': 'Cache-Control', content: '1y' },
@@ -92,9 +112,9 @@ export default defineNuxtConfig({
 				{ name: 'HandheldFriendly', content: 'True' },
 				{ name: 'identifier-URL', content: 'https://kyra.dev' },
 				{ name: 'keywords', content: 'kyra, kyranet, discord, programming, portfolio' },
-				// { name: 'msapplication-config', content: '/icons/browserconfig.xml' },
-				{ name: 'msapplication-TileColor', content: '#55ACEE' },
-				// { name: 'msapplication-TileImage', content: '/icons/mstile-144x144.png' },
+				{ name: 'msapplication-config', content: '/icons/browserconfig.xml' },
+				{ name: 'msapplication-TileColor', content: '#292929' },
+				{ name: 'msapplication-TileImage', content: '/icons/mstile-144x144.png' },
 				{ name: 'owner', content: 'Aura Román, kyradiscord@gmail.com' },
 				{ name: 'rating', content: 'safe for kids' },
 				{ name: 'reply-to', content: 'kyradiscord@gmail.com' },
@@ -104,18 +124,18 @@ export default defineNuxtConfig({
 				{ name: 'subject', content: description },
 				{ name: 'summary', content: description },
 				{ name: 'target', content: 'all' },
-				{ name: 'theme-color', content: '#55ACEE' },
+				{ name: 'theme-color', content: '#292929' },
 				{ name: 'twitter:card', content: 'summary' },
 				{ name: 'twitter:creator', content: '@kyranet_' },
-				// { name: 'twitter:image', content: 'https://kyra.dev/icons/opengraph.png' },
+				{ name: 'twitter:image', content: 'https://kyra.dev/icons/opengraph.png' },
 				{ name: 'twitter:site', content: '@kyranet_' },
 				{ name: 'url', content: 'https://kyra.dev' },
 				{ property: 'og:description', content: description },
 				{ property: 'og:email', content: 'kyradiscord@gmail.com' },
-				{ property: 'og:image:alt', content: 'OpenGraphImage' },
+				{ property: 'og:image:alt', content: 'Logo' },
 				{ property: 'og:image:height', content: '512' },
 				{ property: 'og:image:width', content: '1024' },
-				// { property: 'og:image', content: 'https://kyra.dev/icons/opengraph.png' },
+				{ property: 'og:image', content: 'https://kyra.dev/icons/opengraph.png' },
 				{ property: 'og:locale', content: 'en' },
 				{ property: 'og:title', content: name },
 				{ property: 'og:type', content: 'website' },
