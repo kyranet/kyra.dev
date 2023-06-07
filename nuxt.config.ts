@@ -47,9 +47,9 @@ export default defineNuxtConfig({
 			theme_color: '#18181b',
 			shortcuts: [
 				{
-					name: 'Meme Template Generator Home',
+					name: 'About Aura Román',
 					short_name: name,
-					description: 'Go to Meme Template Generator',
+					description: 'Go to the landing page',
 					url: '/'
 				}
 			]
@@ -59,7 +59,7 @@ export default defineNuxtConfig({
 		head: {
 			charset: 'utf-8',
 			viewport: 'width=device-width, initial-scale=1',
-			title: 'Meme Template Generator',
+			title: 'Aura Román',
 			htmlAttrs: { lang: 'en' },
 			link: [
 				{ rel: 'alternate', href: 'https://kyra.dev' },
