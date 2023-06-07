@@ -1,6 +1,20 @@
+const name = 'Aura Román';
+const description = "Aura Román's personal website and portfolio.";
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-	modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss'],
+	modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss', '@vite-pwa/nuxt'],
+	runtimeConfig: {
+		public: {
+			DISCORD_USER_ID: '242043489611808769'
+		}
+	},
+	nitro: {
+		preset: 'cloudflare-pages',
+		prerender: {
+			routes: ['/', '/sitemap.xml']
+		}
+	},
 	typescript: {
 		shim: false,
 		tsConfig: {
@@ -9,51 +23,76 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-	runtimeConfig: {
-		public: {
-			DISCORD_USER_ID: '242043489611808769'
+	pwa: {
+		registerType: 'autoUpdate',
+		devOptions: {
+			enabled: false,
+			type: 'module'
+		},
+		workbox: {
+			navigateFallback: '/',
+			globPatterns: ['**/*.{js,css,html,png,svg,ico,xml}']
+		},
+		manifest: {
+			background_color: '#27272a',
+			categories: ['kyra', 'kyranet', 'discord', 'programming', 'portfolio'],
+			description,
+			display: 'minimal-ui',
+			lang: 'en',
+			name,
+			orientation: 'portrait-primary',
+			scope: '/',
+			short_name: 'Portfolio',
+			start_url: '/',
+			theme_color: '#18181b',
+			shortcuts: [
+				{
+					name: 'Meme Template Generator Home',
+					short_name: name,
+					description: 'Go to Meme Template Generator',
+					url: '/'
+				}
+			]
 		}
 	},
 	app: {
 		head: {
-			title: 'Aura Román',
+			charset: 'utf-8',
+			viewport: 'width=device-width, initial-scale=1',
+			title: 'Meme Template Generator',
 			htmlAttrs: { lang: 'en' },
 			link: [
-				// <link rel='apple-touch-icon' sizes='180x180' href='/icons/apple-touch-icon.png' />
-				// <link rel='apple-touch-startup-image' href='/icons/apple-startup.png' />
+				{ rel: 'alternate', href: 'https://kyra.dev' },
 				{ rel: 'canonical', href: 'https://kyra.dev' }
-				// <link rel='icon' href='/icons/android-chrome-192x192.png' />
-				// <link rel='icon' href='/favicon.ico' />
-				// <link rel='icon' type='image/png' sizes='16x16' href='/icons/favicon-16x16.png' />
-				// <link rel='icon' type='image/png' sizes='192x192' href='/icons/android-chrome-192x192.png' />
-				// <link rel='icon' type='image/png' sizes='194x194' href='/icons/android-chrome-194x194.png' />
-				// <link rel='icon' type='image/png' sizes='32x32' href='/icons/favicon-32x32.png' />
-				// <link rel='manifest' href='/manifest.webmanifest' />
-				// <link rel='mask-icon' href='/icons/safari-pinned-tab.svg' color='#55ACEE' />
-				// <link rel='shortcut icon' href='/favicon.ico' />
+				// { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon.png' },
+				// { rel: 'apple-touch-startup-image', href: '/icons/apple-startup.png' },
+				// { rel: 'icon', href: '/favicon.ico' },
+				// { rel: 'icon', href: '/icons/favicon-16x16.png' },
+				// { rel: 'icon', href: '/icons/android-chrome-192x192.png' },
+				// { rel: 'icon', href: '/icons/favicon-32x32.png' },
+				// { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg' },
+				// { rel: 'shortcut icon', href: '/favicon.ico' }
 			],
 			meta: [
 				{ 'http-equiv': 'Cache-Control', content: '1y' },
 				{ 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' },
 				{ 'http-equiv': 'Expires', content: '1y' },
-				{ 'http-equiv': 'Page-Enter', content: 'RevealTrans(Duration=2.0,Transition=2)' },
-				{ 'http-equiv': 'Page-Exit', content: 'RevealTrans(Duration=3.0,Transition=12)' },
 				{ 'http-equiv': 'Pragma', content: '1y' },
 				{ name: 'apple-mobile-web-app-capable', content: 'yes' },
 				{ name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
-				{ name: 'apple-mobile-web-app-title', content: 'Aura Román' },
-				{ name: 'application-name', content: 'Aura Román' },
+				{ name: 'apple-mobile-web-app-title', content: name },
+				{ name: 'application-name', content: name },
 				{ name: 'audience', content: 'all' },
 				{ name: 'author', content: 'Aura Román, kyradiscord@gmail.com' },
 				{ name: 'coverage', content: 'Worldwide' },
-				{ name: 'description', content: "Aura Román's personal website and portfolio" },
+				{ name: 'description', content: description },
 				{ name: 'designer', content: 'Aura Román, kyradiscord@gmail.com' },
 				{ name: 'distribution', content: 'Global' },
 				{ name: 'googlebot', content: 'index,follow' },
 				{ name: 'HandheldFriendly', content: 'True' },
 				{ name: 'identifier-URL', content: 'https://kyra.dev' },
 				{ name: 'keywords', content: 'kyra, kyranet, discord, programming, portfolio' },
-				{ name: 'msapplication-config', content: '/browserconfig.xml' },
+				// { name: 'msapplication-config', content: '/icons/browserconfig.xml' },
 				{ name: 'msapplication-TileColor', content: '#55ACEE' },
 				// { name: 'msapplication-TileImage', content: '/icons/mstile-144x144.png' },
 				{ name: 'owner', content: 'Aura Román, kyradiscord@gmail.com' },
@@ -62,8 +101,8 @@ export default defineNuxtConfig({
 				{ name: 'revisit-after', content: '7 days' },
 				{ name: 'robots', content: 'archive,follow,imageindex,index,odp,snippet,translate' },
 				{ name: 'shortlink', content: 'https://kyra.dev' },
-				{ name: 'subject', content: "Aura Román's personal website and portfolio" },
-				{ name: 'summary', content: "Aura Román's personal website and portfolio." },
+				{ name: 'subject', content: description },
+				{ name: 'summary', content: description },
 				{ name: 'target', content: 'all' },
 				{ name: 'theme-color', content: '#55ACEE' },
 				{ name: 'twitter:card', content: 'summary' },
@@ -71,24 +110,17 @@ export default defineNuxtConfig({
 				// { name: 'twitter:image', content: 'https://kyra.dev/icons/opengraph.png' },
 				{ name: 'twitter:site', content: '@kyranet_' },
 				{ name: 'url', content: 'https://kyra.dev' },
-				{ property: 'og:description', content: "Aura Román's personal website and portfolio" },
+				{ property: 'og:description', content: description },
 				{ property: 'og:email', content: 'kyradiscord@gmail.com' },
-				// { property: 'og:image:alt', content: 'OpenGraphImage' },
-				// { property: 'og:image:height', content: '512' },
-				// { property: 'og:image:width', content: '1024' },
+				{ property: 'og:image:alt', content: 'OpenGraphImage' },
+				{ property: 'og:image:height', content: '512' },
+				{ property: 'og:image:width', content: '1024' },
 				// { property: 'og:image', content: 'https://kyra.dev/icons/opengraph.png' },
-				{ property: 'og:locale', content: 'en_US' },
-				{ property: 'og:site_name', content: 'Aura Román' },
-				{ property: 'og:title', content: 'Home | Aura Román' },
+				{ property: 'og:locale', content: 'en' },
+				{ property: 'og:title', content: name },
 				{ property: 'og:type', content: 'website' },
 				{ property: 'og:url', content: 'https://kyra.dev' }
 			]
-		}
-	},
-	nitro: {
-		preset: 'cloudflare-pages',
-		prerender: {
-			routes: ['/', '/sitemap.xml']
 		}
 	}
 });

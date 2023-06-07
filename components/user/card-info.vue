@@ -6,7 +6,9 @@
 		<section role="list">
 			<div role="listitem">
 				<IconsTransgenderFlag aria-label="Transgender ·" draggable="false" />
-				{{ 'She/Her ·' }}
+				{{ ' ' }}
+				<external-link href="https://pronouns.org/she-her" text="She/Her" />
+				{{ ' ·' }}
 				<external-link href="https://www.16personalities.com/infp-personality" text="INFP-T" />
 				{{ ' · 24' }}
 			</div>
@@ -31,7 +33,7 @@
 
 			<div role="listitem">
 				<IconsSmallBlueDiamond draggable="false" aria-hidden="true" />
-				<external-link class="pl-1" href="https://github.com/sapphiredev" text="Sapphire" />{{ "'s Lead Programmer & Architect\n" }}
+				<external-link class="pl-1" href="https://github.com/sapphiredev" text="Sapphire" />{{ "'s Lead Programmer" }}
 			</div>
 		</section>
 	</div>
