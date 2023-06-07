@@ -8116,7 +8116,6 @@ __metadata:
     prettier: ^2.8.8
     prettier-plugin-tailwindcss: ^0.3.0
     sitemap: ^7.1.1
-    vue-meta: ^2.4.0
   languageName: unknown
   linkType: soft
 
@@ -9497,15 +9496,6 @@ __metadata:
   version: 0.1.0
   resolution: "vue-devtools-stub@npm:0.1.0"
   checksum: 3f19fa2ab6d7f65de459f6c10d8f1d682dcd4ac55934c37617423d4a70efb98aa0a35f290120ec0c429ddcc0bdb7458836f87763ee0b8acfe007e4869f67dbbb
-  languageName: node
-  linkType: hard
-
-"vue-meta@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "vue-meta@npm:2.4.0"
-  dependencies:
-    deepmerge: ^4.2.2
-  checksum: a6686e7351e941eb1041ffc2129418e7e2ce6b39993ef7cbd16585c2eb8c232cc9dc35873cefa54781420e03f71c88da6b6cf04c427dc91b314182eca655dedf
   languageName: node
   linkType: hard
 
