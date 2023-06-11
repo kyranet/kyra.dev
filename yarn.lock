@@ -1764,7 +1764,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.5.3, @nuxt/kit@npm:^3.3.3, @nuxt/kit@npm:^3.4.3, @nuxt/kit@npm:^3.5.2":
+"@nuxt/kit@npm:3.5.3, @nuxt/kit@npm:^3.3.3, @nuxt/kit@npm:^3.4.3, @nuxt/kit@npm:^3.5.3":
   version: 3.5.3
   resolution: "@nuxt/kit@npm:3.5.3"
   dependencies:
@@ -2341,16 +2341,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vite-pwa/nuxt@npm:^0.0.10":
-  version: 0.0.10
-  resolution: "@vite-pwa/nuxt@npm:0.0.10"
+"@vite-pwa/nuxt@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@vite-pwa/nuxt@npm:0.1.0"
   dependencies:
-    "@nuxt/kit": ^3.5.2
-    vite-plugin-pwa: ^0.16.1
+    "@nuxt/kit": ^3.5.3
+    vite-plugin-pwa: ">=0.16.3 <1"
   peerDependencies:
-    "@nuxt/kit": ^3.0.0
-    vite-plugin-pwa: ^0.14.0
-  checksum: 31d148fdd4a71c0548337055ee37de59189bc4be9064357af9dc58da06128c98a0ebcae85a5aa36edad356a37fabcd9e29da9cb31d0d7881b46869ba72e97594
+    "@nuxt/kit": ^3.5.3
+    vite-plugin-pwa: ">=0.16.3 <1"
+  checksum: c53492047b2e007ab85ff54bf3310e90362f909153cffac3c7ea14522470f5e2d484e974b7698be6d792c03bcb406d863c0246f015e89c3c224ffe800e81280b
   languageName: node
   linkType: hard
 
@@ -8109,7 +8109,7 @@ __metadata:
     "@heroicons/vue": ^2.0.18
     "@nuxtjs/tailwindcss": ^6.7.0
     "@sapphire/prettier-config": ^1.4.5
-    "@vite-pwa/nuxt": ^0.0.10
+    "@vite-pwa/nuxt": ^0.1.0
     "@vueuse/nuxt": ^10.1.2
     discord-api-types: ^0.37.43
     nuxt: ^3.5.3
@@ -9353,7 +9353,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-pwa@npm:^0.16.1":
+"vite-plugin-pwa@npm:>=0.16.3 <1":
   version: 0.16.3
   resolution: "vite-plugin-pwa@npm:0.16.3"
   dependencies:
