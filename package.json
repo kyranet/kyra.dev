@@ -13,7 +13,7 @@
 		"@heroicons/vue": "^2.0.18",
 		"@nuxtjs/tailwindcss": "^6.7.0",
 		"@sapphire/prettier-config": "^1.4.5",
-		"@vite-pwa/nuxt": "^0.0.10",
+		"@vite-pwa/nuxt": "^0.1.0",
 		"@vueuse/nuxt": "^10.1.2",
 		"discord-api-types": "^0.37.43",
 		"nuxt": "^3.5.3",
@@ -21,5 +21,5 @@
 		"prettier-plugin-tailwindcss": "^0.3.0",
 		"sitemap": "^7.1.1"
 	},
-	"packageManager": "yarn@3.5.1"
+	"packageManager": "yarn@3.6.0"
 }
