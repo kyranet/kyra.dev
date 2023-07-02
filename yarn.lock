@@ -1918,7 +1918,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.6.1, @nuxt/kit@npm:^3.3.3, @nuxt/kit@npm:^3.5.3":
+"@nuxt/kit@npm:3.6.1, @nuxt/kit@npm:^3.3.3, @nuxt/kit@npm:^3.5.3, @nuxt/kit@npm:^3.6.1":
   version: 3.6.1
   resolution: "@nuxt/kit@npm:3.6.1"
   dependencies:
@@ -2693,47 +2693,47 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:10.2.0":
-  version: 10.2.0
-  resolution: "@vueuse/core@npm:10.2.0"
+"@vueuse/core@npm:10.2.1":
+  version: 10.2.1
+  resolution: "@vueuse/core@npm:10.2.1"
   dependencies:
     "@types/web-bluetooth": ^0.0.17
-    "@vueuse/metadata": 10.2.0
-    "@vueuse/shared": 10.2.0
+    "@vueuse/metadata": 10.2.1
+    "@vueuse/shared": 10.2.1
     vue-demi: ">=0.14.5"
-  checksum: 022b07ca097ca32eb8995ff17a8855d1ac641194aa89956a2f3bf62b7861caa72df39750e885e9b67e4a55ee9cb98ca54554450ee62b56445c6d587dc065c88f
+  checksum: 1a7a7ad8372a2ff87ceddee2663a29a911dcd8a1a40b0e63436bc3b0f0786598f70e40e02e69d3cacfb634e35fdcd98136e049431a73516109ff062d8004cd54
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:10.2.0":
-  version: 10.2.0
-  resolution: "@vueuse/metadata@npm:10.2.0"
-  checksum: 01d98a3f6918442a919c6c875a0e467429e84db997eb4c74b8da5c524072969684e5443b938cace6a51f632ed328834ac1685fa4d8fc67d506f5373ef4829275
+"@vueuse/metadata@npm:10.2.1":
+  version: 10.2.1
+  resolution: "@vueuse/metadata@npm:10.2.1"
+  checksum: 1672c0e6e6a54fe397c04b83bf4b78a8db410df272010f5db829e9f72ed285d526ca8bb4d7a3373b17aac2fb37c83d866f6077e667f54afc1ae20bf1ab1a5478
   languageName: node
   linkType: hard
 
-"@vueuse/nuxt@npm:^10.2.0":
-  version: 10.2.0
-  resolution: "@vueuse/nuxt@npm:10.2.0"
+"@vueuse/nuxt@npm:^10.2.1":
+  version: 10.2.1
+  resolution: "@vueuse/nuxt@npm:10.2.1"
   dependencies:
-    "@nuxt/kit": ^3.5.3
-    "@vueuse/core": 10.2.0
-    "@vueuse/metadata": 10.2.0
+    "@nuxt/kit": ^3.6.1
+    "@vueuse/core": 10.2.1
+    "@vueuse/metadata": 10.2.1
     local-pkg: ^0.4.3
-    nuxt: ^3.5.3
+    nuxt: ^3.6.1
     vue-demi: ">=0.14.5"
   peerDependencies:
     nuxt: ^3.0.0
-  checksum: 64f1f01b9bc3774885e9252fcec7f7975fc36503398167084d7a877d108ac918867027b4a6001dc6c0fab2899131a34a6adf75f423fde64727eceba20f98529d
+  checksum: eb35d3a5213133f3d44762d31e96b0a91dca9df90af2e1f305e4e061365cb73082beafab54c17ee8a171c3c04c7ac5dae4dc6e1d0029c3da06129914fbda3e4b
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:10.2.0":
-  version: 10.2.0
-  resolution: "@vueuse/shared@npm:10.2.0"
+"@vueuse/shared@npm:10.2.1":
+  version: 10.2.1
+  resolution: "@vueuse/shared@npm:10.2.1"
   dependencies:
     vue-demi: ">=0.14.5"
-  checksum: b96884b82f315622639cbb186f6989d08527e2aa43236e91d6d454afb9a599b23e32af326351c8c9db9c7d7cc4a0797d44e4644d31de9615bba4f8371838e0e1
+  checksum: eeb19c0448d3f238615e24c738d2a6ebdc8b7d840405dd8704b5d0a3cd84ac3a8d5ec87856b501fac89f0f3bb868e7339d46e5fc3ece02c07160aedd41e507b2
   languageName: node
   linkType: hard
 
@@ -4073,10 +4073,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.46":
-  version: 0.37.46
-  resolution: "discord-api-types@npm:0.37.46"
-  checksum: 86da1a4ed1d57164fa7bbda10bc6126c72685e55b6ed8b30299406fc8cace721e78d3aebe0fe1b35039fad37be4d52a208c9e53f2abfde1bfc3d1aa034f8d264
+"discord-api-types@npm:^0.37.47":
+  version: 0.37.47
+  resolution: "discord-api-types@npm:0.37.47"
+  checksum: 4bce0e03bcf73e16ecfd09813cda8b45a3cdefb1e89c3646b1988b54a3060daa0471ca9f3ff034e6b2d3306593fb938add8152831483e434b59980d7989d3af8
   languageName: node
   linkType: hard
 
@@ -6929,7 +6929,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt@npm:^3.5.3, nuxt@npm:^3.6.1":
+"nuxt@npm:^3.6.1":
   version: 3.6.1
   resolution: "nuxt@npm:3.6.1"
   dependencies:
@@ -8355,8 +8355,8 @@ __metadata:
     "@nuxtjs/tailwindcss": ^6.8.0
     "@sapphire/prettier-config": ^1.4.5
     "@vite-pwa/nuxt": ^0.1.0
-    "@vueuse/nuxt": ^10.2.0
-    discord-api-types: ^0.37.46
+    "@vueuse/nuxt": ^10.2.1
+    discord-api-types: ^0.37.47
     nuxt: ^3.6.1
     prettier: ^2.8.8
     prettier-plugin-tailwindcss: ^0.3.0
