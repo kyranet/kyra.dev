@@ -1,6 +1,4 @@
-const config = require('@sapphire/prettier-config');
-
-module.exports = {
-	...config,
-	plugins: [require('prettier-plugin-tailwindcss')]
+export default {
+	...(await import('@sapphire/prettier-config')).default,
+	plugins: [await import('prettier-plugin-tailwindcss')]
 };
