@@ -111,15 +111,24 @@ export default defineNuxtConfig({
 				{ name: 'googlebot', content: 'index,follow' },
 				{ name: 'HandheldFriendly', content: 'True' },
 				{ name: 'identifier-URL', content: 'https://kyra.dev' },
-				{ name: 'keywords', content: 'kyra, kyranet, discord, programming, portfolio' },
+				{
+					name: 'keywords',
+					content: 'kyra, kyranet, discord, programming, portfolio'
+				},
 				{ name: 'msapplication-config', content: '/icons/browserconfig.xml' },
 				{ name: 'msapplication-TileColor', content: '#292929' },
-				{ name: 'msapplication-TileImage', content: '/icons/mstile-144x144.png' },
+				{
+					name: 'msapplication-TileImage',
+					content: '/icons/mstile-144x144.png'
+				},
 				{ name: 'owner', content: 'Aura Román, kyradiscord@gmail.com' },
 				{ name: 'rating', content: 'safe for kids' },
 				{ name: 'reply-to', content: 'kyradiscord@gmail.com' },
 				{ name: 'revisit-after', content: '7 days' },
-				{ name: 'robots', content: 'archive,follow,imageindex,index,odp,snippet,translate' },
+				{
+					name: 'robots',
+					content: 'archive,follow,imageindex,index,odp,snippet,translate'
+				},
 				{ name: 'shortlink', content: 'https://kyra.dev' },
 				{ name: 'subject', content: description },
 				{ name: 'summary', content: description },
@@ -127,7 +136,10 @@ export default defineNuxtConfig({
 				{ name: 'theme-color', content: '#292929' },
 				{ name: 'twitter:card', content: 'summary' },
 				{ name: 'twitter:creator', content: '@kyranet_' },
-				{ name: 'twitter:image', content: 'https://kyra.dev/icons/opengraph.png' },
+				{
+					name: 'twitter:image',
+					content: 'https://kyra.dev/icons/opengraph.png'
+				},
 				{ name: 'twitter:site', content: '@kyranet_' },
 				{ name: 'url', content: 'https://kyra.dev' },
 				{ property: 'og:description', content: description },
@@ -135,7 +147,10 @@ export default defineNuxtConfig({
 				{ property: 'og:image:alt', content: 'Logo' },
 				{ property: 'og:image:height', content: '512' },
 				{ property: 'og:image:width', content: '1024' },
-				{ property: 'og:image', content: 'https://kyra.dev/icons/opengraph.png' },
+				{
+					property: 'og:image',
+					content: 'https://kyra.dev/icons/opengraph.png'
+				},
 				{ property: 'og:locale', content: 'en' },
 				{ property: 'og:title', content: name },
 				{ property: 'og:type', content: 'website' },

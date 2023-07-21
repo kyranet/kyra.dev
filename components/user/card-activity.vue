@@ -26,9 +26,15 @@
 
 			<!-- content -->
 			<div class="ml-2.5 flex-auto overflow-hidden">
-				<div class="block overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold">{{ data.name }}</div>
-				<div v-if="data.details" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ data.details }}</div>
-				<div v-if="data.state" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ data.state }}</div>
+				<div class="block overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold">
+					{{ data.name }}
+				</div>
+				<div v-if="data.details" class="block overflow-hidden text-ellipsis whitespace-nowrap">
+					{{ data.details }}
+				</div>
+				<div v-if="data.state" class="block overflow-hidden text-ellipsis whitespace-nowrap">
+					{{ data.state }}
+				</div>
 				<div v-if="elapsed" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ elapsed }} elapsed</div>
 			</div>
 		</div>

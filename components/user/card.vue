@@ -87,7 +87,12 @@ if (process.client) {
 				if (heartbeatInterval !== -1) window.clearInterval(heartbeatInterval);
 				heartbeatInterval = window.setInterval(() => send(JSON.stringify({ op: LanyardOpcode.Heartbeat })), data.d.heartbeat_interval);
 
-				send(JSON.stringify({ op: 2, d: { subscribe_to_id: config.public.DISCORD_USER_ID } }));
+				send(
+					JSON.stringify({
+						op: 2,
+						d: { subscribe_to_id: config.public.DISCORD_USER_ID }
+					})
+				);
 				break;
 			}
 			default: {
