@@ -1,9 +1,9 @@
 <template>
 	<nuxt-link :to="href" target="_blank" class="underline-offset-2 hover:underline">
-		{{ text ?? href }}
+		<slot>{{ href }}</slot>
 	</nuxt-link>
 </template>
 
 <script setup lang="ts">
-defineProps<{ href: string; text?: string }>();
+defineProps<{ href: string }>();
 </script>
