@@ -86,7 +86,7 @@
 import { ArrowLeftIcon, CheckIcon } from '@heroicons/vue/24/outline';
 
 const start = Date.UTC(2023, 3, 4, 8, 0, 0, 0);
-const now = useNow({ interval: 1000 });
+const now = useNow({ interval: 60000 });
 
 const day = 1000 * 60 * 60 * 24 * 30;
 const preciseElapsedMonths = computed(() => (now.value.getTime() - start) / day);

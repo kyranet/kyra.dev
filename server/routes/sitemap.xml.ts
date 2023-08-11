@@ -6,6 +6,7 @@ export default defineEventHandler(() => {
 		hostname: 'https://kyra.dev'
 	});
 	sitemap.write({ url: '/', changefreq: 'monthly' });
+	sitemap.write({ url: '/hrt', changefreq: 'monthly' });
 
 	sitemap.end();
 	return streamToPromise(sitemap);
