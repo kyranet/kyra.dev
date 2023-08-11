@@ -5,6 +5,6 @@
 @layer base {
 	html,
 	body {
-		@apply bg-white text-gray-600 dark:bg-zinc-800 dark:text-gray-200;
+		@apply bg-zinc-200 text-gray-600 dark:bg-zinc-800 dark:text-gray-200;
 	}
 }
