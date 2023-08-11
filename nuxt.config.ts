@@ -31,7 +31,7 @@ export default defineNuxtConfig({
 	nitro: {
 		preset: 'cloudflare-pages',
 		prerender: {
-			routes: ['/', '/sitemap.xml']
+			routes: ['/', '/hrt', '/sitemap.xml']
 		}
 	},
 	typescript: {
@@ -105,7 +105,6 @@ export default defineNuxtConfig({
 				{ name: 'audience', content: 'all' },
 				{ name: 'author', content: 'Aura Román, kyradiscord@gmail.com' },
 				{ name: 'coverage', content: 'Worldwide' },
-				{ name: 'description', content: description },
 				{ name: 'designer', content: 'Aura Román, kyradiscord@gmail.com' },
 				{ name: 'distribution', content: 'Global' },
 				{ name: 'googlebot', content: 'index,follow' },
@@ -125,34 +124,15 @@ export default defineNuxtConfig({
 				{ name: 'rating', content: 'safe for kids' },
 				{ name: 'reply-to', content: 'kyradiscord@gmail.com' },
 				{ name: 'revisit-after', content: '7 days' },
-				{
-					name: 'robots',
-					content: 'archive,follow,imageindex,index,odp,snippet,translate'
-				},
 				{ name: 'shortlink', content: 'https://kyra.dev' },
-				{ name: 'subject', content: description },
-				{ name: 'summary', content: description },
 				{ name: 'target', content: 'all' },
 				{ name: 'theme-color', content: '#292929' },
 				{ name: 'twitter:card', content: 'summary' },
 				{ name: 'twitter:creator', content: '@kyranet_' },
-				{
-					name: 'twitter:image',
-					content: 'https://kyra.dev/icons/opengraph.png'
-				},
 				{ name: 'twitter:site', content: '@kyranet_' },
 				{ name: 'url', content: 'https://kyra.dev' },
-				{ property: 'og:description', content: description },
 				{ property: 'og:email', content: 'kyradiscord@gmail.com' },
-				{ property: 'og:image:alt', content: 'Logo' },
-				{ property: 'og:image:height', content: '512' },
-				{ property: 'og:image:width', content: '1024' },
-				{
-					property: 'og:image',
-					content: 'https://kyra.dev/icons/opengraph.png'
-				},
 				{ property: 'og:locale', content: 'en' },
-				{ property: 'og:title', content: name },
 				{ property: 'og:type', content: 'website' },
 				{ property: 'og:url', content: 'https://kyra.dev' }
 			]

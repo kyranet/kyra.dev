@@ -1,92 +1,96 @@
 <template>
-	<section class="body-font">
-		<div class="container mx-4 mt-4 md:mx-auto">
-			<nuxt-link href="/" is="button" class="flex w-fit flex-row items-center gap-2 rounded-lg bg-zinc-300 p-2 dark:bg-zinc-900">
-				<ArrowLeftIcon class="h-5 w-5" />
-				Home
-			</nuxt-link>
+	<div class="container mx-4 mt-4 md:mx-auto">
+		<nuxt-link
+			href="/"
+			is="button"
+			class="flex w-fit flex-row items-center gap-2 rounded-lg bg-zinc-300 p-2 hover:bg-zinc-300/80 dark:bg-zinc-900 hover:dark:bg-zinc-900/80"
+		>
+			<ArrowLeftIcon class="h-5 w-5" />
+			Home
+		</nuxt-link>
 
-			<div class="mt-4 flex flex-row gap-4" :style="`--progress: ${preciseElapsedMonths};`">
-				<div class="relative flex flex-row gap-1 rounded-lg bg-zinc-300 p-2 dark:bg-zinc-900 md:p-4">
-					<div v-for="change of changes" :key="change.name" class="line" :title="change.name">
-						<div class="line-part offset" :class="change.colors.bg" :style="`--months: ${change.starts[0]};`"></div>
-						<div class="line-part start" :class="change.colors.bg" :style="`--months: ${change.starts[1] - change.starts[0]};`"></div>
-						<div class="line-part progress" :class="change.colors.bg" :style="`--months: ${change.peak[0] - change.starts[1]};`"></div>
-						<div
-							v-if="change.peak[0] !== change.peak[1]"
-							class="line-part peak"
-							:class="change.colors.bg"
-							:style="`--months: ${change.peak[1] - change.peak[0]};`"
-						></div>
-					</div>
-				</div>
-				<div>
-					<section class="md:mt-4">
-						<h1 class="text-3xl font-extrabold">
-							<span class="text-sky-600 dark:text-sky-400">Hormone </span>
-							<span>Replacement </span>
-							<span class="text-pink-600 dark:text-pink-400">Therapy</span>
-						</h1>
-						<p class="text-2xl">
-							Progress:
-							<template v-if="elapsed.years">
-								<span class="effect-months">{{ elapsed.years }}</span> years
-							</template>
-							<template v-if="elapsed.months">
-								<span class="effect-months">{{ elapsed.months }}</span> months
-							</template>
-							<template v-if="elapsed.days">
-								<span class="effect-months">{{ elapsed.days }}</span> days
-							</template>
-						</p>
-					</section>
-
-					<section class="mt-8">
-						<h2 class="text-2xl font-bold">Effects</h2>
-						<ul class="mt-2">
-							<li v-for="change of changes" :key="change.name" class="effect">
-								<h3
-									class="effect-title"
-									:class="{ 'opacity-50': preciseElapsedMonths >= change.peak[1], [change.colors.text]: true }"
-								>
-									{{ change.name }}
-								</h3>
-								<section class="ml-4" :class="{ 'opacity-50': preciseElapsedMonths >= change.starts[1] }">
-									<h3 class="text-lg font-semibold">Starts</h3>
-									<p>
-										<span class="effect-months" :class="{ 'opacity-50': within(change.starts).value }">{{
-											change.starts[0]
-										}}</span>
-										-
-										<span class="effect-months">{{ change.starts[1] }}</span>
-										months
-									</p>
-								</section>
-								<section class="ml-4" :class="{ 'opacity-50': preciseElapsedMonths >= change.peak[1] }">
-									<h3 class="text-lg font-semibold">Peaks</h3>
-									<p>
-										<span class="effect-months" :class="{ 'opacity-50': within(change.peak).value }">{{ change.peak[0] }}</span>
-										-
-										<span class="effect-months">{{ change.peak[1] }}</span> months
-									</p>
-								</section>
-							</li>
-						</ul>
-					</section>
+		<div class="mt-4 flex flex-row gap-4 md:gap-12" :style="`--progress: ${preciseElapsedMonths};`">
+			<div class="relative flex flex-row gap-1 rounded-lg bg-zinc-300 p-2 dark:bg-zinc-900 md:p-4">
+				<div v-for="change of changes" :key="change.name" class="line" :class="{ complete: preciseElapsedMonths > 60 }" :title="change.name">
+					<div class="line-part offset" :class="change.colors.bg" :style="`--months: ${change.starts[0]};`"></div>
+					<div class="line-part start" :class="change.colors.bg" :style="`--months: ${change.starts[1] - change.starts[0]};`"></div>
+					<div class="line-part progress" :class="change.colors.bg" :style="`--months: ${change.peak[0] - change.starts[1]};`"></div>
+					<div
+						v-if="change.peak[0] !== change.peak[1]"
+						class="line-part peak"
+						:class="change.colors.bg"
+						:style="`--months: ${change.peak[1] - change.peak[0]};`"
+					></div>
 				</div>
 			</div>
+
+			<div>
+				<section class="md:mt-12">
+					<h1 class="text-3xl font-extrabold">
+						<span class="text-sky-600 dark:text-sky-400">Hormone </span>
+						<span>Replacement </span>
+						<span class="text-pink-600 dark:text-pink-400">Therapy</span>
+					</h1>
+					<p class="mt-2 text-2xl" :title="format.format(start)">
+						Progress:
+						<template v-if="elapsed.years">
+							<span class="effect-months">{{ elapsed.years }}</span> years
+						</template>
+						<template v-if="elapsed.months">
+							<span class="effect-months">{{ elapsed.months }}</span> months
+						</template>
+						<template v-if="elapsed.days">
+							<span class="effect-months">{{ elapsed.days }}</span> days
+						</template>
+					</p>
+				</section>
+
+				<section class="mt-8">
+					<h2 class="text-2xl font-bold">Effects</h2>
+					<ul class="mt-2">
+						<li v-for="change of changes" :key="change.name" class="effect">
+							<div class="effect-title" :class="change.colors.text">
+								<h3 :class="{ 'opacity-50': preciseElapsedMonths >= change.peak[1] }">
+									{{ change.name }}
+								</h3>
+								<CheckIcon v-if="preciseElapsedMonths >= change.peak[1]" class="h-6 w-6" />
+							</div>
+							<section class="ml-4" :class="{ 'opacity-50': preciseElapsedMonths >= change.starts[1] }">
+								<h3 class="text-lg font-semibold">Starts</h3>
+								<p class="ml-4">
+									<span class="effect-months" :class="{ 'opacity-50': within(change.starts).value }">{{ change.starts[0] }}</span>
+									-
+									<span class="effect-months">{{ change.starts[1] }}</span>
+									months
+								</p>
+							</section>
+							<section class="ml-4" :class="{ 'opacity-50': preciseElapsedMonths >= change.peak[1] }">
+								<h3 class="text-lg font-semibold">Peaks</h3>
+								<p class="ml-4">
+									<template v-if="change.peak[0] !== change.peak[1]">
+										<span class="effect-months" :class="{ 'opacity-50': within(change.peak).value }">{{ change.peak[0] }}</span>
+										-
+									</template>
+									<span class="effect-months">{{ change.peak[1] }}</span> months
+								</p>
+							</section>
+						</li>
+					</ul>
+				</section>
+			</div>
 		</div>
-	</section>
+	</div>
 </template>
 
 <script setup lang="ts">
-import { ArrowLeftIcon } from '@heroicons/vue/24/outline';
+import { ArrowLeftIcon, CheckIcon } from '@heroicons/vue/24/outline';
 
 const start = Date.UTC(2023, 3, 4, 8, 0, 0, 0);
 const now = useNow({ interval: 1000 });
 
 const day = 1000 * 60 * 60 * 24 * 30;
 const preciseElapsedMonths = computed(() => (now.value.getTime() - start) / day);
+const format = new Intl.DateTimeFormat(undefined, { timeStyle: 'full', dateStyle: 'full' });
 
 const elapsed = computed(() => {
 	const precise = preciseElapsedMonths.value;
@@ -153,6 +157,8 @@ interface Change {
 	peak: [lower: number, higher: number];
 	colors: { bg: `bg-${string}`; text: `text-${string}` };
 }
+
+defineSeo({ title: 'HRT Progress', description: "Aura Román's personal progress in Hormone Replacement Therapy.", robots: { none: true } });
 </script>
 
 <style scoped>
@@ -172,6 +178,11 @@ interface Change {
 	width: var(--line-width);
 	height: calc(var(--progress) * 30px);
 	@apply absolute rounded-t-lg border-b-4 border-zinc-200 bg-zinc-200/80 dark:border-zinc-900 dark:bg-zinc-950/80;
+}
+
+.line.complete::after {
+	height: calc(60 * 30px);
+	@apply rounded-b-lg border-b-0;
 }
 
 .line-part {
@@ -208,7 +219,7 @@ interface Change {
 }
 
 .effect-title {
-	@apply text-xl font-bold;
+	@apply flex flex-row items-center gap-1 text-xl font-bold;
 }
 
 .effect-months {
