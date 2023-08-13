@@ -19,7 +19,7 @@
 		"discord-api-types": "^0.37.52",
 		"nuxt": "^3.6.5",
 		"prettier": "^3.0.1",
-		"prettier-plugin-tailwindcss": "^0.5.1",
+		"prettier-plugin-tailwindcss": "^0.5.2",
 		"sitemap": "^7.1.1"
 	},
 	"packageManager": "yarn@3.6.1"
