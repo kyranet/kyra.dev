@@ -16,11 +16,11 @@
 		"@sapphire/prettier-config": "^2.0.0",
 		"@vite-pwa/nuxt": "^0.1.0",
 		"@vueuse/nuxt": "^10.3.0",
-		"discord-api-types": "^0.37.52",
+		"discord-api-types": "^0.37.54",
 		"nuxt": "^3.6.5",
-		"prettier": "^3.0.1",
-		"prettier-plugin-tailwindcss": "^0.5.2",
+		"prettier": "^3.0.2",
+		"prettier-plugin-tailwindcss": "^0.5.3",
 		"sitemap": "^7.1.1"
 	},
-	"packageManager": "yarn@3.6.1"
+	"packageManager": "yarn@3.6.2"
 }
