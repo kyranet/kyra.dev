@@ -2864,47 +2864,47 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:10.4.0":
-  version: 10.4.0
-  resolution: "@vueuse/core@npm:10.4.0"
+"@vueuse/core@npm:10.4.1":
+  version: 10.4.1
+  resolution: "@vueuse/core@npm:10.4.1"
   dependencies:
     "@types/web-bluetooth": ^0.0.17
-    "@vueuse/metadata": 10.4.0
-    "@vueuse/shared": 10.4.0
+    "@vueuse/metadata": 10.4.1
+    "@vueuse/shared": 10.4.1
     vue-demi: ">=0.14.5"
-  checksum: facfc2d4f4007b5c272b4a16be4ece9115c3791c561e645713aae45400115b8e8595db0760d782b44df92413f4f373f1dc19a4f9511af05075517669dcfc049b
+  checksum: 2232ad6dd3af89aee80d38ffcbe6a3386d1f55f66ac212baac10c3a506f43ee58a4fffabaa7ec483e62dbf6f231ee7ce1fb82ab91f9312e2d9f8c554810d2773
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:10.4.0":
-  version: 10.4.0
-  resolution: "@vueuse/metadata@npm:10.4.0"
-  checksum: a846479f9574aa8ab413002c32aa5cce391c2e22ef8b635045e75b6d92196a0e2645e74708656472b7e0f4df956c3ad30f954b3f74932d9275f3385fcf3b8513
+"@vueuse/metadata@npm:10.4.1":
+  version: 10.4.1
+  resolution: "@vueuse/metadata@npm:10.4.1"
+  checksum: d9c584f4581eed4e7e81423916077dada73b22ee3f1e798682aac1ee640a91b0287088f26dc7e72d7b6ad2e6c8d630fd7ee8ba02ca5987c033ed8391e92b5542
   languageName: node
   linkType: hard
 
-"@vueuse/nuxt@npm:^10.4.0":
-  version: 10.4.0
-  resolution: "@vueuse/nuxt@npm:10.4.0"
+"@vueuse/nuxt@npm:^10.4.1":
+  version: 10.4.1
+  resolution: "@vueuse/nuxt@npm:10.4.1"
   dependencies:
     "@nuxt/kit": ^3.6.5
-    "@vueuse/core": 10.4.0
-    "@vueuse/metadata": 10.4.0
+    "@vueuse/core": 10.4.1
+    "@vueuse/metadata": 10.4.1
     local-pkg: ^0.4.3
     nuxt: ^3.6.5
     vue-demi: ">=0.14.5"
   peerDependencies:
     nuxt: ^3.0.0
-  checksum: 829c2b05e31683c037a516d10d40a33fd6483d66bc5a30683b269ed353cacbfabe534873d47f48cdc047392a245d9c60f09bfe4276af77f67d434daf67083d1a
+  checksum: 9c35468dd2a91618cc28e779c2124a1deffa221c68e7d4866220711c446017c260ae6572db3d82a4d57916057a456bb34da71c53f60ce292c5e35069eb07d0f6
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:10.4.0":
-  version: 10.4.0
-  resolution: "@vueuse/shared@npm:10.4.0"
+"@vueuse/shared@npm:10.4.1":
+  version: 10.4.1
+  resolution: "@vueuse/shared@npm:10.4.1"
   dependencies:
     vue-demi: ">=0.14.5"
-  checksum: e1ea5069ab209381dd6380da5c695b67b3ad20c303b80113a8c718d1d09f1cac64a417ddfc0d474edd43d637e6dad932cc8e522f7c45d63d2d141341799e3d20
+  checksum: e1cc0b970e0ce06c8bc2cbed3ce37a9ee7ff0667fc3f354398b4201259db1848da428d62c9ea19c3124f5eb80ce0b3f97328f537e3238ec68cdbb726ff3e3fe8
   languageName: node
   linkType: hard
 
@@ -4220,10 +4220,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.55":
-  version: 0.37.55
-  resolution: "discord-api-types@npm:0.37.55"
-  checksum: b0ad37ec52331431f1f4bc20c326b0618087ed0160cc35a5ec103d5c3f52d57ca9758aa07156cdb9430dbec7e14361ee88ac43a0aba1810b765fbd2b62e128e7
+"discord-api-types@npm:^0.37.56":
+  version: 0.37.56
+  resolution: "discord-api-types@npm:0.37.56"
+  checksum: 797be690af70a846422f955d918a5713a2c8c37bea646e2120996522afbb47fc5893122c1ddcb8f57a285ace6e1fb0237d1e63105444ae52534f0570a2f87f34
   languageName: node
   linkType: hard
 
@@ -7889,9 +7889,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.5.3":
-  version: 0.5.3
-  resolution: "prettier-plugin-tailwindcss@npm:0.5.3"
+"prettier-plugin-tailwindcss@npm:^0.5.4":
+  version: 0.5.4
+  resolution: "prettier-plugin-tailwindcss@npm:0.5.4"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-pug": "*"
@@ -7938,16 +7938,16 @@ __metadata:
       optional: true
     prettier-plugin-twig-melody:
       optional: true
-  checksum: c20843d9739bf8ac4608166841484276dc73040ba02fef5dfee2f78f6e10957ad09c161fefb01e120fec24c0f982a34339212ad1fa70ec2b75472f6f853667d9
+  checksum: b4380e03a9f7aaf25f5d352fd145618497b5e9281bbd8c1a43e90a9a72daaf0585f8ac8bf5608e41481441caa4eb568c74556164a384de6a5533a196edab52b0
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.0.0, prettier@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "prettier@npm:3.0.2"
+"prettier@npm:^3.0.0, prettier@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "prettier@npm:3.0.3"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 118b59ddb6c80abe2315ab6d0f4dd1b253be5cfdb20622fa5b65bb1573dcd362e6dd3dcf2711dd3ebfe64aecf7bdc75de8a69dc2422dcd35bdde7610586b677a
+  checksum: e10b9af02b281f6c617362ebd2571b1d7fc9fb8a3bd17e371754428cda992e5e8d8b7a046e8f7d3e2da1dcd21aa001e2e3c797402ebb6111b5cd19609dd228e0
   languageName: node
   linkType: hard
 
@@ -8369,11 +8369,11 @@ __metadata:
     "@nuxtjs/tailwindcss": ^6.8.0
     "@sapphire/prettier-config": ^2.0.0
     "@vite-pwa/nuxt": ^0.1.0
-    "@vueuse/nuxt": ^10.4.0
-    discord-api-types: ^0.37.55
+    "@vueuse/nuxt": ^10.4.1
+    discord-api-types: ^0.37.56
     nuxt: ^3.7.0
-    prettier: ^3.0.2
-    prettier-plugin-tailwindcss: ^0.5.3
+    prettier: ^3.0.3
+    prettier-plugin-tailwindcss: ^0.5.4
     sitemap: ^7.1.1
   languageName: unknown
   linkType: soft
