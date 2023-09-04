@@ -9,18 +9,19 @@
 			Home
 		</nuxt-link>
 
-		<div class="mt-4 flex flex-row gap-4 md:gap-12" :style="`--progress: ${preciseElapsedMonths};`">
+		<div class="mt-4 flex flex-row gap-4 md:gap-12" :style="`--progress: ${totalElapsedDays};`">
 			<div class="relative flex flex-row gap-1 rounded-lg bg-zinc-300 p-2 dark:bg-zinc-900 md:p-4">
-				<div v-for="change of changes" :key="change.name" class="line" :class="{ complete: preciseElapsedMonths > 60 }" :title="change.name">
-					<div class="line-part offset" :class="change.colors.bg" :style="`--months: ${change.starts[0]};`"></div>
-					<div class="line-part start" :class="change.colors.bg" :style="`--months: ${change.starts[1] - change.starts[0]};`"></div>
-					<div class="line-part progress" :class="change.colors.bg" :style="`--months: ${change.peak[0] - change.starts[1]};`"></div>
-					<div
-						v-if="change.peak[0] !== change.peak[1]"
-						class="line-part peak"
-						:class="change.colors.bg"
-						:style="`--months: ${change.peak[1] - change.peak[0]};`"
-					></div>
+				<div
+					v-for="change of changes"
+					:key="change.name"
+					class="line"
+					:class="{ complete: totalElapsedMonths >= change.peak[1] }"
+					:title="change.name"
+				>
+					<div v-if="change.ranges[0]" class="line-part offset" :class="change.colors.bg" :style="`--months: ${change.ranges[0]};`"></div>
+					<div v-if="change.ranges[1]" class="line-part start" :class="change.colors.bg" :style="`--months: ${change.ranges[1]};`"></div>
+					<div v-if="change.ranges[2]" class="line-part progress" :class="change.colors.bg" :style="`--months: ${change.ranges[2]};`"></div>
+					<div v-if="change.ranges[3]" class="line-part peak" :class="change.colors.bg" :style="`--months: ${change.ranges[3]};`"></div>
 				</div>
 			</div>
 
@@ -33,14 +34,14 @@
 					</h1>
 					<p class="mt-2 text-2xl" :title="format.format(start)">
 						Progress:
-						<template v-if="elapsed.years">
-							<span class="effect-months">{{ elapsed.years }}</span> years
+						<template v-if="elapsedYears">
+							<span class="effect-months">{{ elapsedYears }}</span> years
 						</template>
-						<template v-if="elapsed.months">
-							<span class="effect-months">{{ elapsed.months }}</span> months
+						<template v-if="elapsedMonths">
+							<span class="effect-months">{{ elapsedMonths }}</span> months
 						</template>
-						<template v-if="elapsed.days">
-							<span class="effect-months">{{ elapsed.days }}</span> days
+						<template v-if="elapsedDays">
+							<span class="effect-months">{{ elapsedDays }}</span> days
 						</template>
 					</p>
 				</section>
@@ -50,12 +51,12 @@
 					<ul class="mt-2">
 						<li v-for="change of changes" :key="change.name" class="effect">
 							<div class="effect-title" :class="change.colors.text">
-								<h3 :class="{ 'opacity-50': preciseElapsedMonths >= change.peak[1] }">
+								<h3 :class="{ 'opacity-50': totalElapsedMonths >= change.peak[1] }">
 									{{ change.name }}
 								</h3>
-								<CheckIcon v-if="preciseElapsedMonths >= change.peak[1]" class="h-6 w-6" />
+								<CheckIcon v-if="totalElapsedMonths >= change.peak[1]" class="h-6 w-6" />
 							</div>
-							<section class="ml-4" :class="{ 'opacity-50': preciseElapsedMonths >= change.starts[1] }">
+							<section class="ml-4" :class="{ 'opacity-50': totalElapsedMonths >= change.starts[1] }">
 								<h3 class="text-lg font-semibold">Starts</h3>
 								<p class="ml-4">
 									<span class="effect-months" :class="{ 'opacity-50': within(change.starts).value }">{{ change.starts[0] }}</span>
@@ -64,7 +65,7 @@
 									months
 								</p>
 							</section>
-							<section class="ml-4" :class="{ 'opacity-50': preciseElapsedMonths >= change.peak[1] }">
+							<section class="ml-4" :class="{ 'opacity-50': totalElapsedMonths >= change.peak[1] }">
 								<h3 class="text-lg font-semibold">Peaks</h3>
 								<p class="ml-4">
 									<template v-if="change.peak[0] !== change.peak[1]">
@@ -88,74 +89,94 @@ import { ArrowLeftIcon, CheckIcon } from '@heroicons/vue/24/outline';
 const start = Date.UTC(2023, 3, 4, 8, 0, 0, 0);
 const now = useNow({ interval: 60000 });
 
-const day = 1000 * 60 * 60 * 24 * 30;
-const preciseElapsedMonths = computed(() => (now.value.getTime() - start) / day);
+const Day = 1000 * 60 * 60 * 24;
+const preciseElapsedDays = computed(() => (now.value.getTime() - start) / Day);
 const format = new Intl.DateTimeFormat(undefined, { timeStyle: 'full', dateStyle: 'full' });
 
-const elapsed = computed(() => {
-	const precise = preciseElapsedMonths.value;
-	const years = Math.floor(preciseElapsedMonths.value / 12);
-	const months = Math.floor(precise) - years * 12;
-	const days = Math.floor((precise - years * 12 - months) * 30);
-	return { years, months, days };
-});
+const totalElapsedDays = computed(() => Math.floor(preciseElapsedDays.value));
+const totalElapsedMonths = computed(() => Math.floor(totalElapsedDays.value / 30));
 
-const changes: Change[] = [
-	{
-		name: 'Fewer erections and a decrease in ejaculation',
-		starts: [1, 3],
-		peak: [3, 6],
-		colors: { bg: 'bg-red-600 dark:bg-red-500', text: 'text-red-600 dark:text-red-500' }
-	},
-	{
-		name: 'Less interest in sex',
-		starts: [1, 3],
-		peak: [12, 24],
-		colors: { bg: 'bg-orange-600 dark:bg-orange-500', text: 'text-orange-600 dark:text-orange-500' }
-	},
-	{
-		name: 'Slower scalp hair loss',
-		starts: [1, 3],
-		peak: [12, 24],
-		colors: { bg: 'bg-yellow-600 dark:bg-yellow-500', text: 'text-yellow-600 dark:text-yellow-500' }
-	},
-	{
-		name: 'Softer, less oily skin',
-		starts: [3, 6],
-		peak: [3, 6],
-		colors: { bg: 'bg-lime-600 dark:bg-lime-500', text: 'text-lime-600 dark:text-lime-500' }
-	},
-	{
-		name: 'Less muscle mass',
-		starts: [3, 6],
-		peak: [12, 24],
-		colors: { bg: 'bg-emerald-600 dark:bg-emerald-500', text: 'text-emerald-600 dark:text-emerald-500' }
-	},
-	{
-		name: 'Breast development',
-		starts: [3, 6],
-		peak: [24, 36],
-		colors: { bg: 'bg-sky-600 dark:bg-sky-500', text: 'text-sky-600 dark:text-sky-500' }
-	},
-	{ name: 'Smaller testicles', starts: [3, 6], peak: [24, 36], colors: { bg: 'bg-indigo-500', text: 'text-indigo-500' } },
-	{ name: 'More body fat', starts: [3, 6], peak: [24, 60], colors: { bg: 'bg-purple-500', text: 'text-purple-500' } },
-	{
-		name: 'Less facial and body hair growth',
-		starts: [6, 12],
-		peak: [36, 36],
-		colors: { bg: 'bg-pink-600 dark:bg-pink-500', text: 'text-pink-600 dark:text-pink-500' }
-	}
-];
+const elapsedYears = computed(() => Math.floor(totalElapsedDays.value / (12 * 30)));
+const elapsedMonths = computed(() => Math.floor(totalElapsedDays.value / 30 - elapsedYears.value * 12));
+const elapsedDays = computed(() => Math.floor(totalElapsedDays.value - elapsedYears.value * 12 * 30 - elapsedMonths.value * 30));
+
+const changes = (
+	[
+		{
+			name: 'Fewer erections and a decrease in ejaculation',
+			starts: [1, 3],
+			peak: [3, 6],
+			colors: { bg: 'bg-red-600 dark:bg-red-500', text: 'text-red-600 dark:text-red-500' }
+		},
+		{
+			name: 'Less interest in sex',
+			starts: [1, 3],
+			peak: [12, 24],
+			colors: { bg: 'bg-orange-600 dark:bg-orange-500', text: 'text-orange-600 dark:text-orange-500' }
+		},
+		{
+			name: 'Slower scalp hair loss',
+			starts: [1, 3],
+			peak: [12, 24],
+			colors: { bg: 'bg-yellow-600 dark:bg-yellow-500', text: 'text-yellow-600 dark:text-yellow-500' }
+		},
+		{
+			name: 'Softer, less oily skin',
+			starts: [3, 6],
+			mid: 4.5,
+			peak: [3, 6],
+			colors: { bg: 'bg-lime-600 dark:bg-lime-500', text: 'text-lime-600 dark:text-lime-500' }
+		},
+		{
+			name: 'Less muscle mass',
+			starts: [3, 6],
+			peak: [12, 24],
+			colors: { bg: 'bg-emerald-600 dark:bg-emerald-500', text: 'text-emerald-600 dark:text-emerald-500' }
+		},
+		{
+			name: 'Breast development',
+			starts: [3, 6],
+			peak: [24, 36],
+			colors: { bg: 'bg-sky-600 dark:bg-sky-500', text: 'text-sky-600 dark:text-sky-500' }
+		},
+		{ name: 'Smaller testicles', starts: [3, 6], peak: [24, 36], colors: { bg: 'bg-indigo-500', text: 'text-indigo-500' } },
+		{ name: 'More body fat', starts: [3, 6], peak: [24, 60], colors: { bg: 'bg-purple-500', text: 'text-purple-500' } },
+		{
+			name: 'Less facial and body hair growth',
+			starts: [6, 12],
+			peak: [36, 36],
+			colors: { bg: 'bg-pink-600 dark:bg-pink-500', text: 'text-pink-600 dark:text-pink-500' }
+		}
+	] as Change[]
+).map((change) => calculateRanges(change));
+
+function calculateRanges(entry: Readonly<Change>): Readonly<ComputedChange> {
+	const steps = entry.mid //
+		? [entry.starts[0], entry.mid, entry.mid, entry.peak[1]]
+		: [entry.starts[0], entry.starts[1], entry.peak[0], entry.peak[1]];
+	return {
+		name: entry.name,
+		starts: entry.starts,
+		peak: entry.peak,
+		ranges: [steps[0], steps[1] - steps[0], steps[2] - steps[1], steps[3] - steps[2]],
+		colors: entry.colors
+	};
+}
 
 function within(range: [lower: number, higher: number]) {
-	return computed(() => preciseElapsedMonths.value >= range[0] && preciseElapsedMonths.value < range[1]);
+	return computed(() => totalElapsedMonths.value >= range[0] && totalElapsedMonths.value < range[1]);
 }
 
 interface Change {
 	name: string;
 	starts: [lower: number, higher: number];
+	mid?: number;
 	peak: [lower: number, higher: number];
 	colors: { bg: `bg-${string}`; text: `text-${string}` };
+}
+
+interface ComputedChange extends Omit<Change, 'mid'> {
+	ranges: [padding: number, start: number, progress: number, peak: number];
 }
 
 defineSeo({ title: 'HRT Progress', description: "Aura Román's personal progress in Hormone Replacement Therapy.", robots: { none: true } });
@@ -176,7 +197,7 @@ defineSeo({ title: 'HRT Progress', description: "Aura Román's personal progress
 .line::after {
 	content: '';
 	width: var(--line-width);
-	height: calc(var(--progress) * 30px);
+	height: calc(var(--progress) * 1px);
 	@apply absolute rounded-t-lg border-b-4 border-zinc-200 bg-zinc-200/80 dark:border-zinc-900 dark:bg-zinc-950/80;
 }
 
