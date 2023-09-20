@@ -10,7 +10,7 @@
 				<external-link href="https://pronouns.org/she-her">She/Her</external-link>
 				{{ ' ·' }}
 				<external-link href="https://www.16personalities.com/infp-personality">INFP-T</external-link>
-				{{ ' · 24' }}
+				{{ ' · 25' }}
 			</div>
 
 			<div role="listitem">
