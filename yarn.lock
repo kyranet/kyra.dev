@@ -4177,10 +4177,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.56":
-  version: 0.37.56
-  resolution: "discord-api-types@npm:0.37.56"
-  checksum: 797be690af70a846422f955d918a5713a2c8c37bea646e2120996522afbb47fc5893122c1ddcb8f57a285ace6e1fb0237d1e63105444ae52534f0570a2f87f34
+"discord-api-types@npm:^0.37.57":
+  version: 0.37.57
+  resolution: "discord-api-types@npm:0.37.57"
+  checksum: c83c66bfc63c24bb17827a6e4c6516988b22472d99a8b0c9216bc5e826bdfec4d7b6a79efd934a587809f90bc7ee6f989fbfcbb7d825441676e544908dd18959
   languageName: node
   linkType: hard
 
@@ -8299,7 +8299,7 @@ __metadata:
     "@sapphire/prettier-config": ^2.0.0
     "@vite-pwa/nuxt": ^0.1.1
     "@vueuse/nuxt": ^10.4.1
-    discord-api-types: ^0.37.56
+    discord-api-types: ^0.37.57
     nuxt: ^3.7.3
     prettier: ^3.0.3
     prettier-plugin-tailwindcss: ^0.5.4
