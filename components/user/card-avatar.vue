@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { Status } from '~~/composables/use-user';
+import type { Status } from '~~/composables/use-user';
 
 defineProps<{ status: Status }>();
 

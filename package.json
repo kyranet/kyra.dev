@@ -14,13 +14,13 @@
 		"@heroicons/vue": "^2.0.18",
 		"@nuxtjs/tailwindcss": "^6.9.4",
 		"@sapphire/prettier-config": "^2.0.0",
-		"@vite-pwa/nuxt": "^0.1.1",
-		"@vueuse/nuxt": "^10.5.0",
-		"discord-api-types": "^0.37.62",
-		"nuxt": "^3.8.0",
-		"prettier": "^3.0.3",
-		"prettier-plugin-tailwindcss": "^0.5.6",
+		"@vite-pwa/nuxt": "^0.2.3",
+		"@vueuse/nuxt": "^10.6.1",
+		"discord-api-types": "^0.37.63",
+		"nuxt": "^3.8.1",
+		"prettier": "^3.1.0",
+		"prettier-plugin-tailwindcss": "^0.5.7",
 		"sitemap": "^7.1.1"
 	},
-	"packageManager": "yarn@3.6.4"
+	"packageManager": "yarn@4.0.2"
 }
