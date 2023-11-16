@@ -12,7 +12,7 @@
 	},
 	"devDependencies": {
 		"@heroicons/vue": "^2.0.18",
-		"@nuxtjs/tailwindcss": "^6.9.4",
+		"@nuxtjs/tailwindcss": "^6.9.5",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@vite-pwa/nuxt": "^0.2.3",
 		"@vueuse/nuxt": "^10.6.1",
