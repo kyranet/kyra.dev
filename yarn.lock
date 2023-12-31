@@ -8218,9 +8218,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.5.9":
-  version: 0.5.9
-  resolution: "prettier-plugin-tailwindcss@npm:0.5.9"
+"prettier-plugin-tailwindcss@npm:^0.5.10":
+  version: 0.5.10
+  resolution: "prettier-plugin-tailwindcss@npm:0.5.10"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-pug": "*"
@@ -8265,7 +8265,7 @@ __metadata:
       optional: true
     prettier-plugin-twig-melody:
       optional: true
-  checksum: 6450ee245c7ce5a1989dae0425ce35304ed6d117c05f9306db27070f0c54b57448f30c9b88450ba263b66cf235932c8992b22199805c6dc2acc3f26c29e69b80
+  checksum: 38f428aa69480ffd8206dff4e834b15d205d09e90de3058f78261437b2997554ae1ce69f0b5e59113c4f386609739e8be54367cb8a96f10c2bf1822addfc3461
   languageName: node
   linkType: hard
 
@@ -8761,7 +8761,7 @@ __metadata:
     discord-api-types: "npm:^0.37.67"
     nuxt: "npm:^3.9.0"
     prettier: "npm:^3.1.1"
-    prettier-plugin-tailwindcss: "npm:^0.5.9"
+    prettier-plugin-tailwindcss: "npm:^0.5.10"
     sitemap: "npm:^7.1.1"
   languageName: unknown
   linkType: soft
