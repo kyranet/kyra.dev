@@ -12,13 +12,13 @@
 	},
 	"devDependencies": {
 		"@heroicons/vue": "^2.1.1",
-		"@nuxtjs/tailwindcss": "^6.10.4",
+		"@nuxtjs/tailwindcss": "^6.11.0",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@vite-pwa/nuxt": "^0.4.0",
 		"@vueuse/nuxt": "^10.7.2",
 		"discord-api-types": "^0.37.67",
-		"nuxt": "^3.9.1",
-		"prettier": "^3.2.2",
+		"nuxt": "^3.9.3",
+		"prettier": "^3.2.4",
 		"prettier-plugin-tailwindcss": "^0.5.11",
 		"sitemap": "^7.1.1"
 	},
