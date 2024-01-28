@@ -2144,9 +2144,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/tailwindcss@npm:^6.11.0":
-  version: 6.11.0
-  resolution: "@nuxtjs/tailwindcss@npm:6.11.0"
+"@nuxtjs/tailwindcss@npm:^6.11.1":
+  version: 6.11.1
+  resolution: "@nuxtjs/tailwindcss@npm:6.11.1"
   dependencies:
     "@nuxt/kit": "npm:^3.9.3"
     autoprefixer: "npm:^10.4.17"
@@ -2164,7 +2164,7 @@ __metadata:
     tailwind-config-viewer: "npm:^1.7.3"
     tailwindcss: "npm:~3.4.1"
     ufo: "npm:^1.3.2"
-  checksum: 650b66bec1b0d0f77966117c2a57b285ed4ea9f62d90fd72253a57df34f71b258dab56656da8b6ee2c04de3998b2af8fd1f81bd43d5322ab7a01496a0cc778ad
+  checksum: 8dec144205ea43df85406cc6ac2023ee52b001bd8b251294d2a190c0866b655f8530ec573b6886b1aee1d00c3ced5e918a6f4916dee8258717ed84f1a62e443c
   languageName: node
   linkType: hard
 
@@ -8745,7 +8745,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@heroicons/vue": "npm:^2.1.1"
-    "@nuxtjs/tailwindcss": "npm:^6.11.0"
+    "@nuxtjs/tailwindcss": "npm:^6.11.1"
     "@sapphire/prettier-config": "npm:^2.0.0"
     "@vite-pwa/nuxt": "npm:^0.4.0"
     "@vueuse/nuxt": "npm:^10.7.2"
