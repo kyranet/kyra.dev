@@ -37,9 +37,15 @@
 				<div v-if="data.state" class="block overflow-hidden text-ellipsis whitespace-nowrap">
 					{{ data.state }}
 				</div>
-				<div v-if="elapsed" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ elapsed }} elapsed</div>
+				<div v-if="elapsed && !spotifyImageUrl" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ elapsed }} elapsed</div>
 			</div>
 		</div>
+		<template v-if="spotifyImageUrl">
+					<user-card-seekbar 
+						:start-time-ms="data.timestamps.start"
+						:end-time-ms="data.timestamps.end"
+					/>
+		</template>
 
 		<!-- buttons -->
 		<div v-if="data.buttons?.length" class="mt-3 flex flex-initial flex-col flex-wrap items-stretch justify-start">
