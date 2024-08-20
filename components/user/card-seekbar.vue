@@ -4,8 +4,8 @@
         <div class="progress h-1 bg-primary rounded-xl bg-white" :style="{ width: `${percentage}%` }"></div>
       </div>
       <div class="flex justify-between items-start">
-        <div class="my-0 py-0">{{ currentPosition }}</div>
-        <div class="my-0 py-0">{{ songDuration }}</div>
+        <div class="mb-0 mt-0.5 py-0 text-xs">{{ currentPosition }}</div>
+        <div class="mb-0 mt-0.5 py-0 text-xs">{{ songDuration }}</div>
       </div>
     </div>
 </template>
