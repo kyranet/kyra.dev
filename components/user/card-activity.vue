@@ -7,21 +7,23 @@
 			<!-- assets -->
 			<div class="relative self-start">
 				<img
-					:src="`https://cdn.discordapp.com/app-assets/${data.application_id}/${data.assets!.large_image}.png`"
-					:alt="data.assets!.large_text"
-					width="60"
+					v-if="spotifyImageUrl" 
+					:src="spotifyImageUrl" 
+					:alt="data.assets!.large_text" 
+					width="60" 
 					height="60"
+					class="block rounded-lg object-cover" 
+					:class="{ 'large-mask': data.assets!.small_text }" />
+				<img 
+					v-if="data.assets!.large_text && !spotifyImageUrl"
+					:src="`https://cdn.discordapp.com/app-assets/${data.application_id}/${data.assets!.large_image}.png`"
+					:alt="data.assets!.large_text" width="60" height="60" 
 					class="block rounded-lg object-cover"
-					:class="{ 'large-mask': data.assets!.small_text }"
-				/>
-				<img
-					v-if="data.assets!.small_text"
+					:class="{ 'large-mask': data.assets!.small_text }" />
+				<img v-if="data.assets!.small_text"
 					:src="`https://cdn.discordapp.com/app-assets/${data.application_id}/${data.assets!.small_image}.png`"
-					:alt="data.assets!.small_text"
-					width="20"
-					height="20"
-					class="absolute -bottom-1 -right-1 rounded-full"
-				/>
+					:alt="data.assets!.small_text" width="20" height="20"
+					class="absolute -bottom-1 -right-1 rounded-full" />
 			</div>
 
 			<!-- content -->
@@ -66,6 +68,13 @@ const hourAsMilliseconds = minuteAsMilliseconds * 60;
 const props = defineProps<{ data: GatewayActivity }>();
 const elapsed = useState<string | null>('user-card-activity-elapsed', computeElapsed);
 window.setInterval(() => (elapsed.value = computeElapsed()), 1000);
+
+const spotifyImageUrl = computed(() => {
+	if (props.data.id === 'spotify:1') {
+		return `https://i.scdn.co/image/${props.data.assets?.large_image.replace('spotify:', '')}`;
+	}
+	return null;
+});
 
 function computeElapsed() {
 	if (!props.data.timestamps?.start) return null;
