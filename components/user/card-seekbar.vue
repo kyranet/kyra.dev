@@ -16,12 +16,7 @@ const props = defineProps<{
     endTimeMs: number
 }>();
 
-const currentDateTime = ref(new Date());
-
-onMounted(() => {
-    const interval = setInterval(() => currentDateTime.value = new Date(), 1000);
-    onUnmounted(() => clearInterval(interval));
-});
+const currentDateTime = useNow();
 
 const currentPosition = computed(() => formatTime(props.startTimeMs, currentDateTime.value.getTime()));
 const songDuration = computed(() => formatTime(props.startTimeMs, props.endTimeMs));
