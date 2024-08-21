@@ -17,12 +17,16 @@
 				<img 
 					v-if="data.assets!.large_text && !spotifyImageUrl"
 					:src="`https://cdn.discordapp.com/app-assets/${data.application_id}/${data.assets!.large_image}.png`"
-					:alt="data.assets!.large_text" width="60" height="60" 
+					:alt="data.assets!.large_text" 
+					width="60" 
+					height="60" 
 					class="block rounded-lg object-cover"
 					:class="{ 'large-mask': data.assets!.small_text }" />
 				<img v-if="data.assets!.small_text"
 					:src="`https://cdn.discordapp.com/app-assets/${data.application_id}/${data.assets!.small_image}.png`"
-					:alt="data.assets!.small_text" width="20" height="20"
+					:alt="data.assets!.small_text" 
+					width="20" 
+					height="20"
 					class="absolute -bottom-1 -right-1 rounded-full" />
 			</div>
 
@@ -42,8 +46,8 @@
 		</div>
 		<template v-if="spotifyImageUrl">
 					<user-card-seekbar 
-						:start-time-ms="data.timestamps.start"
-						:end-time-ms="data.timestamps.end"
+						:start-time-ms="data.timestamps!.start!"
+						:end-time-ms="data.timestamps!.end!"
 					/>
 		</template>
 
@@ -77,7 +81,7 @@ window.setInterval(() => (elapsed.value = computeElapsed()), 1000);
 
 const spotifyImageUrl = computed(() => {
 	if (props.data.id === 'spotify:1') {
-		return `https://i.scdn.co/image/${props.data.assets?.large_image.replace('spotify:', '')}`;
+		return `https://i.scdn.co/image/${props.data.assets?.large_image!.replace('spotify:', '')}`;
 	}
 	return null;
 });
