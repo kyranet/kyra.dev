@@ -15,7 +15,7 @@
 					class="block rounded-lg object-cover" 
 					:class="{ 'large-mask': data.assets!.small_text }" />
 				<img 
-					v-if="data.assets!.large_text && !spotifyImageUrl"
+					v-else-if="data.assets!.large_text"
 					:src="`https://cdn.discordapp.com/app-assets/${data.application_id}/${data.assets!.large_image}.png`"
 					:alt="data.assets!.large_text" 
 					width="60" 
@@ -44,12 +44,11 @@
 				<div v-if="elapsed && !spotifyImageUrl" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ elapsed }} elapsed</div>
 			</div>
 		</div>
-		<template v-if="spotifyImageUrl">
-			<user-card-seekbar 
-				:start-time-ms="data.timestamps!.start!"
-				:end-time-ms="data.timestamps!.end!"
-			/>
-		</template>
+		<user-card-seekbar 
+			v-if="spotifyImageUrl"
+			:start-time-ms="data.timestamps!.start!"
+			:end-time-ms="data.timestamps!.end!"
+		/>
 
 		<!-- buttons -->
 		<div v-if="data.buttons?.length" class="mt-3 flex flex-initial flex-col flex-wrap items-stretch justify-start">
