@@ -7,27 +7,31 @@
 			<!-- assets -->
 			<div class="relative self-start">
 				<img
-					v-if="spotifyImageUrl" 
-					:src="spotifyImageUrl" 
-					:alt="data.assets!.large_text" 
-					width="60" 
+					v-if="spotifyImageUrl"
+					:src="spotifyImageUrl"
+					:alt="data.assets!.large_text"
+					width="60"
 					height="60"
-					class="block rounded-lg object-cover" 
-					:class="{ 'large-mask': data.assets!.small_text }" />
-				<img 
+					class="block rounded-lg object-cover"
+					:class="{ 'large-mask': data.assets!.small_text }"
+				/>
+				<img
 					v-else-if="data.assets!.large_text"
 					:src="`https://cdn.discordapp.com/app-assets/${data.application_id}/${data.assets!.large_image}.png`"
-					:alt="data.assets!.large_text" 
-					width="60" 
-					height="60" 
+					:alt="data.assets!.large_text"
+					width="60"
+					height="60"
 					class="block rounded-lg object-cover"
-					:class="{ 'large-mask': data.assets!.small_text }" />
-				<img v-if="data.assets!.small_text"
+					:class="{ 'large-mask': data.assets!.small_text }"
+				/>
+				<img
+					v-if="data.assets!.small_text"
 					:src="`https://cdn.discordapp.com/app-assets/${data.application_id}/${data.assets!.small_image}.png`"
-					:alt="data.assets!.small_text" 
-					width="20" 
+					:alt="data.assets!.small_text"
+					width="20"
 					height="20"
-					class="absolute -bottom-1 -right-1 rounded-full" />
+					class="absolute -bottom-1 -right-1 rounded-full"
+				/>
 			</div>
 
 			<!-- content -->
@@ -44,11 +48,7 @@
 				<div v-if="elapsed && !spotifyImageUrl" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ elapsed }} elapsed</div>
 			</div>
 		</div>
-		<user-card-seekbar 
-			v-if="spotifyImageUrl"
-			:start-time-ms="data.timestamps!.start!"
-			:end-time-ms="data.timestamps!.end!"
-		/>
+		<user-card-seekbar v-if="spotifyImageUrl" :start-time-ms="data.timestamps!.start!" :end-time-ms="data.timestamps!.end!" />
 
 		<!-- buttons -->
 		<div v-if="data.buttons?.length" class="mt-3 flex flex-initial flex-col flex-wrap items-stretch justify-start">
