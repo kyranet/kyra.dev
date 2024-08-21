@@ -45,10 +45,10 @@
 			</div>
 		</div>
 		<template v-if="spotifyImageUrl">
-					<user-card-seekbar 
-						:start-time-ms="data.timestamps!.start!"
-						:end-time-ms="data.timestamps!.end!"
-					/>
+			<user-card-seekbar 
+				:start-time-ms="data.timestamps!.start!"
+				:end-time-ms="data.timestamps!.end!"
+			/>
 		</template>
 
 		<!-- buttons -->
