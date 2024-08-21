@@ -69,14 +69,11 @@
 
 <script setup lang="ts">
 import type { GatewayActivity } from 'discord-api-types/payloads/v10';
-
-const secondAsMilliseconds = 1000;
-const minuteAsMilliseconds = secondAsMilliseconds * 60;
-const hourAsMilliseconds = minuteAsMilliseconds * 60;
+import { formatTime } from '~/utils/format-time';
 
 const props = defineProps<{ data: GatewayActivity }>();
-const elapsed = useState<string | null>('user-card-activity-elapsed', computeElapsed);
-window.setInterval(() => (elapsed.value = computeElapsed()), 1000);
+const elapsed = useState<string | null>('user-card-activity-elapsed', () => formatTime(props.data.timestamps?.start!, Date.now()));
+window.setInterval(() => (elapsed.value = formatTime(props.data.timestamps?.start!, Date.now())), 1000);
 
 const spotifyImageUrl = computed(() => {
 	if (props.data.id === 'spotify:1') {
@@ -84,20 +81,6 @@ const spotifyImageUrl = computed(() => {
 	}
 	return null;
 });
-
-function computeElapsed() {
-	if (!props.data.timestamps?.start) return null;
-
-	const distance = Date.now() - props.data.timestamps.start;
-	const seconds = (Math.floor(distance / secondAsMilliseconds) % 60).toString().padStart(2, '0');
-	const minutes = (Math.floor(distance / minuteAsMilliseconds) % 60).toString().padStart(2, '0');
-	if (distance < hourAsMilliseconds) return `${minutes}:${seconds}`;
-
-	const hours = Math.floor(distance / hourAsMilliseconds)
-		.toString()
-		.padStart(2, '0');
-	return `${hours}:${minutes}:${seconds}`;
-}
 </script>
 
 <style scoped>
