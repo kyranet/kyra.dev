@@ -1,7 +1,7 @@
 <template>
 	<div class="mt-3 text-[0.75rem]">
 		<div class="bar h-1 rounded-xl bg-neutral-700">
-			<div class="progress bg-primary h-1 rounded-xl bg-white" :style="{ width: `${percentage}%` }"></div>
+			<div class="bg-primary h-1 rounded-xl bg-white" :style="{ width: `${percentage}%` }"></div>
 		</div>
 		<div class="flex items-start justify-between">
 			<div class="mb-0 mt-0.5 py-0 text-xs">{{ currentPosition }}</div>
