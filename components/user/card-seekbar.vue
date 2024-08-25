@@ -12,6 +12,7 @@
 
 <script setup lang="ts">
 import { formatTime } from '~/utils/format-time';
+import { useClamp } from '@vueuse/math';
 
 const props = defineProps<{
 	startTimeMs: number;
@@ -23,5 +24,5 @@ const currentDateTime = useNow();
 const currentPosition = computed(() => formatTime(props.startTimeMs, currentDateTime.value.getTime()));
 const songDuration = computed(() => formatTime(props.startTimeMs, props.endTimeMs));
 const percentage = computed(() => ((currentDateTime.value.getTime() - props.startTimeMs) / (props.endTimeMs - props.startTimeMs)) * 100);
-const clampedPercentage = computed(() => Math.min(Math.max(percentage.value, 0), 100));
+const clampedPercentage = useClamp(percentage, 0, 100);
 </script>
