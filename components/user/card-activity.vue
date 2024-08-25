@@ -7,6 +7,16 @@
 			<!-- assets -->
 			<div class="relative self-start">
 				<img
+					v-if="spotifyImageUrl"
+					:src="spotifyImageUrl"
+					:alt="data.assets!.large_text"
+					width="60"
+					height="60"
+					class="block rounded-lg object-cover"
+					:class="{ 'large-mask': data.assets!.small_text }"
+				/>
+				<img
+					v-else-if="data.assets!.large_text"
 					:src="`https://cdn.discordapp.com/app-assets/${data.application_id}/${data.assets!.large_image}.png`"
 					:alt="data.assets!.large_text"
 					width="60"
@@ -35,9 +45,10 @@
 				<div v-if="data.state" class="block overflow-hidden text-ellipsis whitespace-nowrap">
 					{{ data.state }}
 				</div>
-				<div v-if="elapsed" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ elapsed }} elapsed</div>
+				<div v-if="elapsed && !spotifyImageUrl" class="block overflow-hidden text-ellipsis whitespace-nowrap">{{ elapsed }} elapsed</div>
 			</div>
 		</div>
+		<user-card-seekbar v-if="spotifyImageUrl" :start-time-ms="data.timestamps!.start!" :end-time-ms="data.timestamps!.end!" />
 
 		<!-- buttons -->
 		<div v-if="data.buttons?.length" class="mt-3 flex flex-initial flex-col flex-wrap items-stretch justify-start">
@@ -58,28 +69,18 @@
 
 <script setup lang="ts">
 import type { GatewayActivity } from 'discord-api-types/payloads/v10';
-
-const secondAsMilliseconds = 1000;
-const minuteAsMilliseconds = secondAsMilliseconds * 60;
-const hourAsMilliseconds = minuteAsMilliseconds * 60;
+import { formatTime } from '~/utils/format-time';
 
 const props = defineProps<{ data: GatewayActivity }>();
-const elapsed = useState<string | null>('user-card-activity-elapsed', computeElapsed);
-window.setInterval(() => (elapsed.value = computeElapsed()), 1000);
+const elapsed = useState<string | null>('user-card-activity-elapsed', () => formatTime(props.data.timestamps?.start!, Date.now()));
+window.setInterval(() => (elapsed.value = formatTime(props.data.timestamps?.start!, Date.now())), 1000);
 
-function computeElapsed() {
-	if (!props.data.timestamps?.start) return null;
-
-	const distance = Date.now() - props.data.timestamps.start;
-	const seconds = (Math.floor(distance / secondAsMilliseconds) % 60).toString().padStart(2, '0');
-	const minutes = (Math.floor(distance / minuteAsMilliseconds) % 60).toString().padStart(2, '0');
-	if (distance < hourAsMilliseconds) return `${minutes}:${seconds}`;
-
-	const hours = Math.floor(distance / hourAsMilliseconds)
-		.toString()
-		.padStart(2, '0');
-	return `${hours}:${minutes}:${seconds}`;
-}
+const spotifyImageUrl = computed(() => {
+	if (props.data.id === 'spotify:1') {
+		return `https://i.scdn.co/image/${props.data.assets?.large_image!.replace('spotify:', '')}`;
+	}
+	return null;
+});
 </script>
 
 <style scoped>

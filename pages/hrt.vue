@@ -10,7 +10,7 @@
 		</nuxt-link>
 
 		<div class="mt-4 flex flex-row gap-4 md:gap-12" :style="`--progress: ${totalElapsedDays};`">
-			<div class="relative flex flex-row gap-1 rounded-lg bg-zinc-300 p-2 dark:bg-zinc-900 md:p-4">
+			<div class="relative flex flex-row gap-1 rounded-lg bg-zinc-300 p-2 md:p-4 dark:bg-zinc-900">
 				<div
 					v-for="change of changes"
 					:key="change.name"
