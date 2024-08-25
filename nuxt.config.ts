@@ -23,17 +23,20 @@ const description = "Aura Román's personal website and portfolio.";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
 	modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss', '@vite-pwa/nuxt'],
+
 	runtimeConfig: {
 		public: {
 			DISCORD_USER_ID: '242043489611808769'
 		}
 	},
+
 	nitro: {
 		preset: 'cloudflare-pages',
 		prerender: {
 			routes: ['/', '/hrt', '/sitemap.xml']
 		}
 	},
+
 	typescript: {
 		shim: false,
 		tsConfig: {
@@ -42,6 +45,7 @@ export default defineNuxtConfig({
 			}
 		}
 	},
+
 	pwa: {
 		registerType: 'autoUpdate',
 		devOptions: {
@@ -76,6 +80,7 @@ export default defineNuxtConfig({
 			]
 		}
 	},
+
 	app: {
 		head: {
 			charset: 'utf-8',
@@ -137,5 +142,7 @@ export default defineNuxtConfig({
 				{ property: 'og:url', content: 'https://kyra.dev' }
 			]
 		}
-	}
+	},
+
+	compatibilityDate: '2024-08-25'
 });
