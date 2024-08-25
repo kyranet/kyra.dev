@@ -12,6 +12,7 @@
 
 <script setup lang="ts">
 import { formatTime } from '~/utils/format-time';
+import { useClamp, createProjection } from '@vueuse/math';
 
 const props = defineProps<{
 	startTimeMs: number;
@@ -22,5 +23,10 @@ const currentDateTime = useNow();
 
 const currentPosition = computed(() => formatTime(props.startTimeMs, currentDateTime.value.getTime()));
 const songDuration = computed(() => formatTime(props.startTimeMs, props.endTimeMs));
-const percentage = computed(() => ((currentDateTime.value.getTime() - props.startTimeMs) / (props.endTimeMs - props.startTimeMs)) * 100);
+const useProjector = createProjection(() => [props.startTimeMs, props.endTimeMs], [0, 100]);
+const percentage = useClamp(
+	useProjector(() => currentDateTime.value.getTime()),
+	0,
+	100
+);
 </script>
