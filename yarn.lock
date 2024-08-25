@@ -8921,7 +8921,7 @@ __metadata:
     nuxt: "npm:^3.13.0"
     prettier: "npm:^3.3.3"
     prettier-plugin-tailwindcss: "npm:^0.6.6"
-    sitemap: "npm:^7.1.2"
+    sitemap: "npm:^8.0.0"
   languageName: unknown
   linkType: soft
 
@@ -9163,9 +9163,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sitemap@npm:^7.1.2":
-  version: 7.1.2
-  resolution: "sitemap@npm:7.1.2"
+"sitemap@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "sitemap@npm:8.0.0"
   dependencies:
     "@types/node": "npm:^17.0.5"
     "@types/sax": "npm:^1.2.1"
@@ -9173,7 +9173,7 @@ __metadata:
     sax: "npm:^1.2.4"
   bin:
     sitemap: dist/cli.js
-  checksum: 10/f4edeaaa49511b034b73cc1b1e7b218d1faee8ca05398f30810b8f4662fcff2a20670a9b81470a9445fcdfb40abb602f962c61fdfeaca0fcce9aa99215b0ddc6
+  checksum: 10/8af7ddbf3753f467ec01507cc19710a8846effbbb17c506e6c09aed8c8f445fa9ad7a8bdcb7654183fc755940470a4a194c2c117ad5b9f522d12ca62a8f4d173
   languageName: node
   linkType: hard
 
