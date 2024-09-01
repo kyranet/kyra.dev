@@ -3032,9 +3032,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vite-pwa/nuxt@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "@vite-pwa/nuxt@npm:0.10.0"
+"@vite-pwa/nuxt@npm:^0.10.1":
+  version: 0.10.1
+  resolution: "@vite-pwa/nuxt@npm:0.10.1"
   dependencies:
     "@nuxt/kit": "npm:^3.9.0"
     pathe: "npm:^1.1.1"
@@ -3045,7 +3045,7 @@ __metadata:
   peerDependenciesMeta:
     "@vite-pwa/assets-generator":
       optional: true
-  checksum: 10/591efa46a98be2bcde718588d6d65deed0614034e40df4aad3a1e7cf381cb8ccfe4d7d97e1e9e2549a05bb32868141bb061fa88e9b4ab1391a436417fc00d1cb
+  checksum: 10/ed398fb76f24133e9a95e1f06d330a06446f3fa47c4720d351430cd433b1f5cca0e44f702fd05ecd2ff323f25e0d7a1ac3a639222ec4840d4ee476970a69e8c0
   languageName: node
   linkType: hard
 
@@ -4671,10 +4671,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:^0.37.97":
-  version: 0.37.97
-  resolution: "discord-api-types@npm:0.37.97"
-  checksum: 10/94eea4b95ebb7ab89cce325c5c5654ce7fd3f1e17efa997fd375b7fe81cd5e872c097cf98cfc9d4d7ff233c924f501d812516a048913023bde02f3bbba21849b
+"discord-api-types@npm:^0.37.98":
+  version: 0.37.98
+  resolution: "discord-api-types@npm:0.37.98"
+  checksum: 10/972bdcc6d15e60ea12d35b6da784dd434254d58b036d4218ccd6fcde5be78c63586c1c85e26bcedaacd97ece057efc6130fdef0d3d8279e3d6bc67e66a7b61bd
   languageName: node
   linkType: hard
 
@@ -8888,10 +8888,10 @@ __metadata:
     "@heroicons/vue": "npm:^2.1.5"
     "@nuxtjs/tailwindcss": "npm:^6.12.1"
     "@sapphire/prettier-config": "npm:^2.0.0"
-    "@vite-pwa/nuxt": "npm:^0.10.0"
+    "@vite-pwa/nuxt": "npm:^0.10.1"
     "@vueuse/math": "npm:^11.0.3"
     "@vueuse/nuxt": "npm:^11.0.3"
-    discord-api-types: "npm:^0.37.97"
+    discord-api-types: "npm:^0.37.98"
     nuxt: "npm:^3.13.0"
     prettier: "npm:^3.3.3"
     prettier-plugin-tailwindcss: "npm:^0.6.6"
