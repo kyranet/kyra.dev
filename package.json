@@ -15,10 +15,10 @@
 		"@nuxtjs/tailwindcss": "^6.12.1",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@vite-pwa/nuxt": "^0.10.5",
-		"@vueuse/math": "^11.0.3",
-		"@vueuse/nuxt": "^11.0.3",
+		"@vueuse/math": "^11.1.0",
+		"@vueuse/nuxt": "^11.1.0",
 		"discord-api-types": "^0.37.100",
-		"nuxt": "^3.13.1",
+		"nuxt": "^3.13.2",
 		"prettier": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.6",
 		"sitemap": "^8.0.0"
