@@ -1444,21 +1444,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/selector-resolve-nested@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@csstools/selector-resolve-nested@npm:1.1.0"
+"@csstools/selector-resolve-nested@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@csstools/selector-resolve-nested@npm:2.0.0"
   peerDependencies:
-    postcss-selector-parser: ^6.0.13
-  checksum: 10/bb7591e790cf6112157870f8ba3ebb7018924b88f49feff51ab07476ceca3b290cae900734e0aad30d308add07e07082f0e61625b3931572c04952c5531df2b2
+    postcss-selector-parser: ^6.1.0
+  checksum: 10/996093f9fe45c93f1af38e0dd58b099e49de35608a27ad8fadd3070601e3aa689e1f9c0f2fb4ab55339ea32d239d83b1c7926196d287ff516cf74236b84eeebc
   languageName: node
   linkType: hard
 
-"@csstools/selector-specificity@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@csstools/selector-specificity@npm:3.1.1"
+"@csstools/selector-specificity@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@csstools/selector-specificity@npm:4.0.0"
   peerDependencies:
-    postcss-selector-parser: ^6.0.13
-  checksum: 10/3786a6afea97b08ad739ee8f4004f7e0a9e25049cee13af809dbda6462090744012a54bd9275a44712791e8f103f85d21641f14e81799f9dab946b0459a5e1ef
+    postcss-selector-parser: ^6.1.0
+  checksum: 10/7076c1d8af0fba94f06718f87fba5bfea583f39089efa906ae38b5ecd6912d3d5865f7047a871ac524b1057e4c970622b2ade456b90d69fb9393902250057994
   languageName: node
   linkType: hard
 
@@ -2258,7 +2258,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.13.2, @nuxt/kit@npm:^3.12.3, @nuxt/kit@npm:^3.13.1, @nuxt/kit@npm:^3.13.2, @nuxt/kit@npm:^3.9.0":
+"@nuxt/kit@npm:3.13.2, @nuxt/kit@npm:^3.13.1, @nuxt/kit@npm:^3.13.2, @nuxt/kit@npm:^3.9.0":
   version: 3.13.2
   resolution: "@nuxt/kit@npm:3.13.2"
   dependencies:
@@ -2377,23 +2377,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/tailwindcss@npm:^6.12.1":
-  version: 6.12.1
-  resolution: "@nuxtjs/tailwindcss@npm:6.12.1"
+"@nuxtjs/tailwindcss@npm:^6.12.2":
+  version: 6.12.2
+  resolution: "@nuxtjs/tailwindcss@npm:6.12.2"
   dependencies:
-    "@nuxt/kit": "npm:^3.12.3"
-    autoprefixer: "npm:^10.4.19"
+    "@nuxt/kit": "npm:^3.13.2"
+    autoprefixer: "npm:^10.4.20"
     consola: "npm:^3.2.3"
     defu: "npm:^6.1.4"
-    h3: "npm:^1.12.0"
+    h3: "npm:^1.13.0"
+    klona: "npm:^2.0.6"
     pathe: "npm:^1.1.2"
-    postcss: "npm:^8.4.38"
-    postcss-nesting: "npm:^12.1.5"
+    postcss: "npm:^8.4.47"
+    postcss-nesting: "npm:^13.0.0"
     tailwind-config-viewer: "npm:^2.0.4"
-    tailwindcss: "npm:~3.4.4"
-    ufo: "npm:^1.5.3"
+    tailwindcss: "npm:~3.4.13"
+    ufo: "npm:^1.5.4"
     unctx: "npm:^2.3.1"
-  checksum: 10/759013b995886e76d76cb4d1a3bc349fea0489ad04bad46708cd30f45439f14cee3394f679d28599ae7ff06e91c543c6aacdeaabd1afcf9a535dc1e17758fc88
+  checksum: 10/946506e819e49af2089e6a787c7a42d0a8d4f1ad248dd985d6fde0b9a3224e91e58c56cf35284b5a079e9582c5110978fe9963399f16171a0357b6e99449a0f4
   languageName: node
   linkType: hard
 
@@ -3644,7 +3645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.19, autoprefixer@npm:^10.4.20":
+"autoprefixer@npm:^10.4.20":
   version: 10.4.20
   resolution: "autoprefixer@npm:10.4.20"
   dependencies:
@@ -4329,6 +4330,15 @@ __metadata:
     shebang-command: "npm:^2.0.0"
     which: "npm:^2.0.1"
   checksum: 10/e1a13869d2f57d974de0d9ef7acbf69dc6937db20b918525a01dacb5032129bd552d290d886d981e99f1b624cb03657084cc87bd40f115c07ecf376821c729ce
+  languageName: node
+  linkType: hard
+
+"crossws@npm:>=0.2.0 <0.4.0":
+  version: 0.3.1
+  resolution: "crossws@npm:0.3.1"
+  dependencies:
+    uncrypto: "npm:^0.1.3"
+  checksum: 10/d358a58b364b3314a0e42ee66b1432c01d416128e53eda983eb121abdad5ff39831a1f1ea3e90e80157ceaa0fc925f5193c151b156aa62af9e0c9bcb2fb2a15a
   languageName: node
   linkType: hard
 
@@ -5780,21 +5790,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"h3@npm:^1.10.2, h3@npm:^1.12.0":
-  version: 1.12.0
-  resolution: "h3@npm:1.12.0"
+"h3@npm:^1.10.2, h3@npm:^1.12.0, h3@npm:^1.13.0":
+  version: 1.13.0
+  resolution: "h3@npm:1.13.0"
   dependencies:
-    cookie-es: "npm:^1.1.0"
-    crossws: "npm:^0.2.4"
+    cookie-es: "npm:^1.2.2"
+    crossws: "npm:>=0.2.0 <0.4.0"
     defu: "npm:^6.1.4"
     destr: "npm:^2.0.3"
-    iron-webcrypto: "npm:^1.1.1"
-    ohash: "npm:^1.1.3"
+    iron-webcrypto: "npm:^1.2.1"
+    ohash: "npm:^1.1.4"
     radix3: "npm:^1.1.2"
-    ufo: "npm:^1.5.3"
+    ufo: "npm:^1.5.4"
     uncrypto: "npm:^0.1.3"
-    unenv: "npm:^1.9.0"
-  checksum: 10/59c7a3818e863c84a32110cf4ee26ac6deb39b99527c483e56c4334b1cadb77ffca2895472b7af227a205757a5b27da43b73a057cb113b7769547062ace89cc7
+    unenv: "npm:^1.10.0"
+  checksum: 10/ecdbe3cdddc767ea6f9be9939b14192dd296eb434641bbecc5b665f7210de8c03910ae40931668788395b5de6cd517afaa628d7b5ce0fb60786fce1ad6e81bcb
   languageName: node
   linkType: hard
 
@@ -6154,7 +6164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"iron-webcrypto@npm:^1.1.1":
+"iron-webcrypto@npm:^1.2.1":
   version: 1.2.1
   resolution: "iron-webcrypto@npm:1.2.1"
   checksum: 10/c1f52ccfe2780efa5438c134538ee4b26c96a87d22f351d896781219efbce25b4fe716d1cb7f248e02da96881760541135acbcc7c0622ffedf71cb0e227bebf9
@@ -8189,16 +8199,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nesting@npm:^12.1.5":
-  version: 12.1.5
-  resolution: "postcss-nesting@npm:12.1.5"
+"postcss-nesting@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "postcss-nesting@npm:13.0.0"
   dependencies:
-    "@csstools/selector-resolve-nested": "npm:^1.1.0"
-    "@csstools/selector-specificity": "npm:^3.1.1"
+    "@csstools/selector-resolve-nested": "npm:^2.0.0"
+    "@csstools/selector-specificity": "npm:^4.0.0"
     postcss-selector-parser: "npm:^6.1.0"
   peerDependencies:
     postcss: ^8.4
-  checksum: 10/fe2632b4c7f81249bbea21f9f6dce327d06eb76efb8bf5d47c5a780fc2f8b48a26b61e85cebbc19588d079b750e5ab670eca93716fa36a9388ba231044906669
+  checksum: 10/c2cb54589cb29ecaf57b53055be75e1a17c6f9e00a6a190b61cb6f2d53de53306df94bc434e7d3035b7d9948f36e3b94f7627e03862326057a58c820fc181a54
   languageName: node
   linkType: hard
 
@@ -8375,7 +8385,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.23, postcss@npm:^8.4.38, postcss@npm:^8.4.43, postcss@npm:^8.4.47":
+"postcss@npm:^8.4.23, postcss@npm:^8.4.43, postcss@npm:^8.4.47":
   version: 8.4.47
   resolution: "postcss@npm:8.4.47"
   dependencies:
@@ -8922,7 +8932,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@heroicons/vue": "npm:^2.1.5"
-    "@nuxtjs/tailwindcss": "npm:^6.12.1"
+    "@nuxtjs/tailwindcss": "npm:^6.12.2"
     "@sapphire/prettier-config": "npm:^2.0.0"
     "@vite-pwa/nuxt": "npm:^0.10.5"
     "@vueuse/math": "npm:^11.1.0"
@@ -9592,9 +9602,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:~3.4.4":
-  version: 3.4.10
-  resolution: "tailwindcss@npm:3.4.10"
+"tailwindcss@npm:~3.4.13":
+  version: 3.4.14
+  resolution: "tailwindcss@npm:3.4.14"
   dependencies:
     "@alloc/quick-lru": "npm:^5.2.0"
     arg: "npm:^5.0.2"
@@ -9621,7 +9631,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 10/5296111e7b0c3e638f3a136a0eb13ab4048c5c5ef5e72b055ae6a0f811502e99478218958bfbbf49b3ed8cf07f395fc893589033a893087e299c084fec8efcac
+  checksum: 10/2b75b697d4859ce813947b043edf19ed61f80321914743a00ba883f327016e4f7f9414823b6ccffeb1359524335c47933d970da5ce2158329f43e9a89d934eb0
   languageName: node
   linkType: hard
 
