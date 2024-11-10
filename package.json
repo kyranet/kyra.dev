@@ -18,7 +18,7 @@
 		"@vueuse/math": "^11.2.0",
 		"@vueuse/nuxt": "^11.2.0",
 		"discord-api-types": "^0.37.100",
-		"nuxt": "^3.13.2",
+		"nuxt": "^3.14.159",
 		"prettier": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.8",
 		"sitemap": "^8.0.0"
