@@ -11,17 +11,17 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@heroicons/vue": "^2.1.5",
+		"@heroicons/vue": "^2.2.0",
 		"@nuxtjs/tailwindcss": "^6.12.2",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@vite-pwa/nuxt": "^0.10.6",
-		"@vueuse/math": "^11.2.0",
-		"@vueuse/nuxt": "^11.2.0",
+		"@vueuse/math": "^11.3.0",
+		"@vueuse/nuxt": "^11.3.0",
 		"discord-api-types": "^0.37.100",
-		"nuxt": "^3.14.159",
+		"nuxt": "^3.14.1592",
 		"prettier": "^3.3.3",
-		"prettier-plugin-tailwindcss": "^0.6.8",
+		"prettier-plugin-tailwindcss": "^0.6.9",
 		"sitemap": "^8.0.0"
 	},
-	"packageManager": "yarn@4.5.1"
+	"packageManager": "yarn@4.5.2"
 }
