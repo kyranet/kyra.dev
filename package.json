@@ -19,9 +19,9 @@
 		"@vueuse/nuxt": "^11.3.0",
 		"discord-api-types": "^0.37.100",
 		"nuxt": "^3.14.1592",
-		"prettier": "^3.3.3",
+		"prettier": "^3.4.1",
 		"prettier-plugin-tailwindcss": "^0.6.9",
 		"sitemap": "^8.0.0"
 	},
-	"packageManager": "yarn@4.5.2"
+	"packageManager": "yarn@4.5.3"
 }
