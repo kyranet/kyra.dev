@@ -12,15 +12,15 @@
 	},
 	"devDependencies": {
 		"@heroicons/vue": "^2.2.0",
-		"@nuxtjs/tailwindcss": "^6.12.2",
+		"@nuxtjs/tailwindcss": "^6.13.1",
 		"@sapphire/prettier-config": "^2.0.0",
 		"@vite-pwa/nuxt": "^0.10.6",
 		"@vueuse/math": "^12.4.0",
 		"@vueuse/nuxt": "^12.4.0",
 		"discord-api-types": "^0.37.100",
-		"nuxt": "^3.15.1",
+		"nuxt": "^3.15.2",
 		"prettier": "^3.4.2",
-		"prettier-plugin-tailwindcss": "^0.6.9",
+		"prettier-plugin-tailwindcss": "^0.6.10",
 		"sitemap": "^8.0.0"
 	},
 	"packageManager": "yarn@4.6.0"
