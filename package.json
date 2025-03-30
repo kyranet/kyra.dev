@@ -23,5 +23,5 @@
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"sitemap": "^8.0.0"
 	},
-	"packageManager": "yarn@4.8.0"
+	"packageManager": "yarn@4.8.1"
 }
