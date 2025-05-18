@@ -2100,7 +2100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.17.3, @nuxt/kit@npm:^3.15.4, @nuxt/kit@npm:^3.16.0, @nuxt/kit@npm:^3.16.2, @nuxt/kit@npm:^3.9.0":
+"@nuxt/kit@npm:3.17.3, @nuxt/kit@npm:^3.15.4, @nuxt/kit@npm:^3.16.0, @nuxt/kit@npm:^3.16.2, @nuxt/kit@npm:^3.17.3, @nuxt/kit@npm:^3.9.0":
   version: 3.17.3
   resolution: "@nuxt/kit@npm:3.17.3"
   dependencies:
@@ -3341,56 +3341,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:12.8.2":
-  version: 12.8.2
-  resolution: "@vueuse/core@npm:12.8.2"
+"@vueuse/core@npm:13.2.0":
+  version: 13.2.0
+  resolution: "@vueuse/core@npm:13.2.0"
   dependencies:
     "@types/web-bluetooth": "npm:^0.0.21"
-    "@vueuse/metadata": "npm:12.8.2"
-    "@vueuse/shared": "npm:12.8.2"
-    vue: "npm:^3.5.13"
-  checksum: 10/66af78b3164294dc08b83d9a254602cc03a84c2dd99691001719426fd06badd4b565dabd77e4cb2654214b13b49f5dc08bd71f823f928d8bb7d353f148a6fd40
+    "@vueuse/metadata": "npm:13.2.0"
+    "@vueuse/shared": "npm:13.2.0"
+  peerDependencies:
+    vue: ^3.5.0
+  checksum: 10/28355289318130d2259394f002f473570cbd8f195e1276abf2b8bd5388e302cd49b8f7cc6940fe58074c903ebdc4eaad0d7593a3d73d44295c2f6143f29eb72d
   languageName: node
   linkType: hard
 
-"@vueuse/math@npm:^12.8.2":
-  version: 12.8.2
-  resolution: "@vueuse/math@npm:12.8.2"
+"@vueuse/math@npm:^13.2.0":
+  version: 13.2.0
+  resolution: "@vueuse/math@npm:13.2.0"
   dependencies:
-    "@vueuse/shared": "npm:12.8.2"
-    vue: "npm:^3.5.13"
-  checksum: 10/49df19776c8cb52fd09052803d0675232932d6892ca4395800dbb04a49077eb708647b4bb53a79203814da2f13875d3e99d911bdc2bd7f1921b4d3ca6e93c234
+    "@vueuse/shared": "npm:13.2.0"
+  peerDependencies:
+    vue: ^3.5.0
+  checksum: 10/ab0d52acabfe685b087e906d4c5addcd9345af1143b269e6c4442c5b8665e12e9e71b2ba0639f1c6fa07e2668965dfded4c25211599d3f72a3c9c3a4308c6c4b
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:12.8.2":
-  version: 12.8.2
-  resolution: "@vueuse/metadata@npm:12.8.2"
-  checksum: 10/ad7299346dbbf2f6256c631f70801cc86a2b58b53a83cc978f48f6a452a92b52e47966a631f5c35b667b3307a4a817eb6a8421f76b0b5ae4e9a2e12dc2c2b3ca
+"@vueuse/metadata@npm:13.2.0":
+  version: 13.2.0
+  resolution: "@vueuse/metadata@npm:13.2.0"
+  checksum: 10/08a42672db1d2dcb3c326b57cd09e178365ae002f9b3bbae3afddad95d9c6f231c54590aa0a87be363b28cf178fd7eedbd5e56693adac7e80b343651851cccfc
   languageName: node
   linkType: hard
 
-"@vueuse/nuxt@npm:^12.8.2":
-  version: 12.8.2
-  resolution: "@vueuse/nuxt@npm:12.8.2"
+"@vueuse/nuxt@npm:^13.2.0":
+  version: 13.2.0
+  resolution: "@vueuse/nuxt@npm:13.2.0"
   dependencies:
-    "@nuxt/kit": "npm:^3.15.4"
-    "@vueuse/core": "npm:12.8.2"
-    "@vueuse/metadata": "npm:12.8.2"
+    "@nuxt/kit": "npm:^3.17.3"
+    "@vueuse/core": "npm:13.2.0"
+    "@vueuse/metadata": "npm:13.2.0"
     local-pkg: "npm:^1.1.1"
-    vue: "npm:^3.5.13"
   peerDependencies:
     nuxt: ^3.0.0 || ^4.0.0-0
-  checksum: 10/74d26ab14a61e017212174a15aee7524c709c7821925f2566f91e9fe661aaeef54bad0f936365b93fe583ac794e86416e59a2d507a4a65a9c424de1f992f4d36
+    vue: ^3.5.0
+  checksum: 10/bec7a6c52894b398622c207707597977b482b4e451a80fd4f0545edde77a13583376247c2a9092da545d7607f9d10dfb221bf3018f98d29aa206eacf3f0e2a9c
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:12.8.2":
-  version: 12.8.2
-  resolution: "@vueuse/shared@npm:12.8.2"
-  dependencies:
-    vue: "npm:^3.5.13"
-  checksum: 10/2cbb24706e43e0dd02074997d6833973a333ed4a1cc1df5fc0b6f7dcba14450aafb3bba7fbf4caf9294be4c1dfde54dbc68961e43a8f40b127e7b533f4698830
+"@vueuse/shared@npm:13.2.0":
+  version: 13.2.0
+  resolution: "@vueuse/shared@npm:13.2.0"
+  peerDependencies:
+    vue: ^3.5.0
+  checksum: 10/73411e47af79b42311e8b978d3669d6e11b38b470e181b7d4ffd80cc31f37bbe8abb072552f3986b1cf0e97f4ce0bdedee71b6217c955fdeff96af23d2e7a307
   languageName: node
   linkType: hard
 
@@ -9979,8 +9981,8 @@ __metadata:
     "@nuxtjs/tailwindcss": "npm:^6.14.0"
     "@sapphire/prettier-config": "npm:^2.0.0"
     "@vite-pwa/nuxt": "npm:^0.10.8"
-    "@vueuse/math": "npm:^12.8.2"
-    "@vueuse/nuxt": "npm:^12.8.2"
+    "@vueuse/math": "npm:^13.2.0"
+    "@vueuse/nuxt": "npm:^13.2.0"
     discord-api-types: "npm:^0.37.100"
     nuxt: "npm:^3.17.3"
     prettier: "npm:^3.5.3"
