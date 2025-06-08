@@ -18,10 +18,10 @@
 		"@vueuse/math": "^12.8.2",
 		"@vueuse/nuxt": "^12.8.2",
 		"discord-api-types": "^0.37.100",
-		"nuxt": "^3.17.4",
+		"nuxt": "^3.17.5",
 		"prettier": "^3.5.3",
 		"prettier-plugin-tailwindcss": "^0.6.12",
 		"sitemap": "^8.0.0"
 	},
-	"packageManager": "yarn@4.9.1"
+	"packageManager": "yarn@4.9.2"
 }
