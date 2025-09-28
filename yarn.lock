@@ -3085,20 +3085,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vite-pwa/nuxt@npm:^0.10.8":
-  version: 0.10.8
-  resolution: "@vite-pwa/nuxt@npm:0.10.8"
+"@vite-pwa/nuxt@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@vite-pwa/nuxt@npm:1.0.4"
   dependencies:
     "@nuxt/kit": "npm:^3.9.0"
     pathe: "npm:^1.1.1"
     ufo: "npm:^1.3.2"
-    vite-plugin-pwa: "npm:>=0.21.2 <1"
+    vite-plugin-pwa: "npm:^1.0.0"
   peerDependencies:
-    "@vite-pwa/assets-generator": ^0.2.6
+    "@vite-pwa/assets-generator": ^1.0.0
   peerDependenciesMeta:
     "@vite-pwa/assets-generator":
       optional: true
-  checksum: 10/c6325125a47526c07f8f2c219f1cf95de6c4d27d2194826867ec416c7fffc6eb7dddce40bee2c8c944f83431087c338948ecc34768277c4711148edb3c1abb37
+  checksum: 10/58e32a5f81d9d4b600b807f7c4f8100fc222a523e5d807bab8e313190228b88d13c8a562d06f2b8dda39cae85cd40e6bf2d2640a54022f7b058c4772754a1347
   languageName: node
   linkType: hard
 
@@ -9066,7 +9066,7 @@ __metadata:
     "@heroicons/vue": "npm:^2.2.0"
     "@nuxtjs/tailwindcss": "npm:^6.14.0"
     "@sapphire/prettier-config": "npm:^2.0.0"
-    "@vite-pwa/nuxt": "npm:^0.10.8"
+    "@vite-pwa/nuxt": "npm:^1.0.4"
     "@vueuse/math": "npm:^12.8.2"
     "@vueuse/nuxt": "npm:^12.8.2"
     discord-api-types: "npm:^0.37.100"
@@ -10505,9 +10505,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-pwa@npm:>=0.21.2 <1":
-  version: 0.21.2
-  resolution: "vite-plugin-pwa@npm:0.21.2"
+"vite-plugin-pwa@npm:^1.0.0":
+  version: 1.0.3
+  resolution: "vite-plugin-pwa@npm:1.0.3"
   dependencies:
     debug: "npm:^4.3.6"
     pretty-bytes: "npm:^6.1.1"
@@ -10515,14 +10515,14 @@ __metadata:
     workbox-build: "npm:^7.3.0"
     workbox-window: "npm:^7.3.0"
   peerDependencies:
-    "@vite-pwa/assets-generator": ^0.2.6
-    vite: ^3.1.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
+    "@vite-pwa/assets-generator": ^1.0.0
+    vite: ^3.1.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
     workbox-build: ^7.3.0
     workbox-window: ^7.3.0
   peerDependenciesMeta:
     "@vite-pwa/assets-generator":
       optional: true
-  checksum: 10/8bbccc3f17db6fd0fa7306e2eb8ac8c09235212ddcd3675cea2fecad05026922f3313b45affc66056ed3f1bcd2e9aae2818ca83edca65cb4db02061400749c3d
+  checksum: 10/92b02050332b6748a00f0df7c2324a8463848ab76286fc28769eba639ae40ae770d622dfecf8efb1fe9ea5b1b15574d82be2857f8f0208ba68a095f3cf276813
   languageName: node
   linkType: hard
 
